@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # parking_slot_seller
 
 This is parking mobile application. Where car owner can park their cars in their nearby locations. 
@@ -14,3 +15,7 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+||||||| empty tree
+=======
+# Parking-Slot-Park-Owner
+>>>>>>> 6d3fc145347f7a789f02a70c5553758e1599e00c
