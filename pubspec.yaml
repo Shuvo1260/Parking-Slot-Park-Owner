@@ -29,7 +29,7 @@ dependencies:
 flutter_icons:
   android: true
   ios: true
-  image_path: "assets/ic_launcher.png"
+  image_path: "assets/images/ic_launcher.png"
 
 flutter_launcher_name:
   name: "Parking Slot"
@@ -47,11 +47,9 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
-
-  # The following line ensures that the Material Icons font is
-  # included with your application, so that you can use the icons in
-  # the material Icons class.
   uses-material-design: true
+  assets:
+    - assets/images/
 
   # To add assets to your application, add an assets section, like this:
   # assets:
