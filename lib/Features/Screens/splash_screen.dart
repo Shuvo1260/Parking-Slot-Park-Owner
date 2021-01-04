@@ -34,18 +34,21 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     print("Splash");
 
+    // Start full screen
+    SystemChrome.setEnabledSystemUIOverlays([]);
+
     loadScreen();
   }
 
   @override
   void dispose() {
     super.dispose();
+    // Exit full screen
     SystemChrome.setEnabledSystemUIOverlays(SystemUiOverlay.values);
   }
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setEnabledSystemUIOverlays([]);
     return Scaffold(
       body: SafeArea(
         child: Container(
