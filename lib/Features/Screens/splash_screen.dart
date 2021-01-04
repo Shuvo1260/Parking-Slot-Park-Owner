@@ -1,5 +1,9 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:parking_slot_seller/Features/Screens/login.dart';
 
 void main() => runApp(
       MyApp(),
@@ -8,8 +12,12 @@ void main() => runApp(
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(body: SplashScreen()),
+    return GetMaterialApp(
+      home: MaterialApp(
+        home: Scaffold(
+          body: SplashScreen(),
+        ),
+      ),
     );
   }
 }
@@ -24,6 +32,8 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     print("Splash");
+
+    loadScreen();
   }
 
   @override
@@ -34,6 +44,18 @@ class _SplashScreenState extends State<SplashScreen> {
           child: Text("Temp"),
         ),
       ),
+    );
+  }
+
+  Future<Timer> loadScreen() async {
+    return Timer(
+      Duration(seconds: 3),
+      () {
+        print("3 seconds");
+        Get.off(
+          LoginScreen(),
+        );
+      },
     );
   }
 }
