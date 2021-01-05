@@ -6,9 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:parking_slot_seller/Features/Screens/login.dart';
 import 'package:parking_slot_seller/Features/Widgets/splash_screen_widgets.dart';
-import 'package:parking_slot_seller/Resources/assets.dart';
 import 'package:parking_slot_seller/Resources/colors.dart';
-import 'package:parking_slot_seller/Resources/strings.dart';
 
 void main() => runApp(
       MyApp(),
@@ -70,32 +68,7 @@ class _SplashScreenState extends State<SplashScreen> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               SplashLogo(),
-              Flexible(
-                flex: 1,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(
-                      APP_NAME,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: FONT_BANK_GOTHIC,
-                      ),
-                    ),
-                    Text(
-                      SPLASH_SCREEN_MESSAGE,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18,
-                        fontFamily: FONT_BANK_GOTHIC,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              SplashTexts(),
             ],
           ),
         ),
