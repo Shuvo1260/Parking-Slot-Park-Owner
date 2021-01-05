@@ -37,24 +37,28 @@ class SplashTexts extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text(
-            APP_NAME,
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-              fontFamily: FONT_BANK_GOTHIC,
-            ),
-          ),
-          Text(
-            SPLASH_SCREEN_MESSAGE,
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 18,
-              fontFamily: FONT_BANK_GOTHIC,
-            ),
-          ),
+          _TextBuilder(text: APP_NAME, fontSize: 24.0),
+          _TextBuilder(text: SPLASH_SCREEN_MESSAGE, fontSize: 18.0)
         ],
+      ),
+    );
+  }
+}
+
+class _TextBuilder extends StatelessWidget {
+  final double fontSize;
+  final String text;
+  _TextBuilder({@required this.text, @required this.fontSize});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      style: TextStyle(
+        color: Colors.white,
+        fontSize: fontSize,
+        fontWeight: FontWeight.bold,
+        fontFamily: FONT_BANK_GOTHIC,
       ),
     );
   }
