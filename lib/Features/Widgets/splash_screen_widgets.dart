@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:parking_slot_seller/Resources/assets.dart';
 import 'package:parking_slot_seller/Resources/strings.dart';
 
+// Building splash logo
 class SplashLogo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -13,11 +14,14 @@ class SplashLogo extends StatelessWidget {
           child: Container(
             height: 300.0,
             // height: double.infinity,
+            // Creating background cloud image
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(IMAGE_CAR_BACKGROUND_CLOUD),
               ),
             ),
+
+            // creating car image
             child: Image.asset(
               IMAGE_LAUNCHER_ICON,
             ),
@@ -28,6 +32,7 @@ class SplashLogo extends StatelessWidget {
   }
 }
 
+// Build texts
 class SplashTexts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

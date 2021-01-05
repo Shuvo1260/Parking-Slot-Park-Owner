@@ -15,11 +15,10 @@ void main() => runApp(
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // Creating app
     return GetMaterialApp(
       home: MaterialApp(
-        home: Scaffold(
-          body: SplashScreen(),
-        ),
+        home: SplashScreen(),
       ),
     );
   }
@@ -39,7 +38,8 @@ class _SplashScreenState extends State<SplashScreen> {
     // Start full screen
     SystemChrome.setEnabledSystemUIOverlays([]);
 
-    // loadScreen();
+    // Waiting screen for a moment
+    loadScreen();
   }
 
   @override
@@ -56,6 +56,7 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Container(
           height: double.infinity,
           width: double.infinity,
+          // Background color is creating
           decoration: BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.bottomCenter,
@@ -67,6 +68,7 @@ class _SplashScreenState extends State<SplashScreen> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
+              // Calling screen design widgets
               SplashLogo(),
               SplashTexts(),
             ],
@@ -78,7 +80,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   Future<Timer> loadScreen() async {
     return Timer(
-      Duration(seconds: 3),
+      Duration(seconds: 4),
       () {
         print("3 seconds");
         Get.off(
