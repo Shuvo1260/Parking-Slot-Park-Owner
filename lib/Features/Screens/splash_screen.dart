@@ -71,6 +71,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 child: Padding(
                   padding: EdgeInsets.all(20.0),
                   child: Container(
+                    height: 300.0,
                     // height: double.infinity,
                     decoration: BoxDecoration(
                       image: DecorationImage(
