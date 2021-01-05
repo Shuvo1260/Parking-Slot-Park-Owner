@@ -54,55 +54,8 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-<<<<<<< HEAD
-        child: Column(
-          children: [
-            Container(
-              height: double.infinity,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.bottomCenter,
-                  end: Alignment.topCenter,
-                  colors: [COLOR_CARIBBEAN_GREEN, COLOR_SHAMROCK],
-                ),
-              ),
-              child: Center(
-                child: Padding(
-                  padding: EdgeInsets.all(20.0),
-                  child: Container(
-                    height: double.infinity,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage(IMAGE_CAR_BACKGROUND_CLOUD),
-                      ),
-                    ),
-                    child: Image.asset(
-                      IMAGE_LAUNCHER_ICON,
-||||||| fe141a1
-          child: Column(
-        children: [
-          Container(
-            height: double.infinity,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.bottomCenter,
-                end: Alignment.topCenter,
-                colors: [COLOR_CARIBBEAN_GREEN, COLOR_SHAMROCK],
-              ),
-            ),
-            child: Center(
-              child: Padding(
-                padding: EdgeInsets.all(20.0),
-                child: Container(
-                  height: double.infinity,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage(IMAGE_CAR_BACKGROUND_CLOUD),
-=======
         child: Container(
-          // height: double.infinity,
+          height: double.infinity,
           width: double.infinity,
           decoration: BoxDecoration(
             gradient: LinearGradient(
@@ -131,31 +84,10 @@ class _SplashScreenState extends State<SplashScreen> {
                       child: Image.asset(
                         IMAGE_LAUNCHER_ICON,
                       ),
->>>>>>> d877388
                     ),
-<<<<<<< HEAD
                   ),
-||||||| fe141a1
-                  ),
-                  child: Image.asset(
-                    IMAGE_LAUNCHER_ICON,
-                  ),
-=======
-                  ),
->>>>>>> d877388
                 ),
               ),
-<<<<<<< HEAD
-            ),
-          ],
-        ),
-      ),
-||||||| fe141a1
-            ),
-          ),
-        ],
-      )),
-=======
               Flexible(
                 flex: 1,
                 child: Column(
@@ -184,7 +116,6 @@ class _SplashScreenState extends State<SplashScreen> {
           ),
         ),
       ),
->>>>>>> d877388
     );
   }
 
