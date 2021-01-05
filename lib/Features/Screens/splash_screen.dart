@@ -98,15 +98,17 @@ class _SplashScreenState extends State<SplashScreen> {
                       APP_NAME,
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 22,
+                        fontSize: 24,
                         fontWeight: FontWeight.bold,
+                        fontFamily: FONT_BANK_GOTHIC,
                       ),
                     ),
                     Text(
                       SPLASH_SCREEN_MESSAGE,
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 16,
+                        fontSize: 18,
+                        fontFamily: FONT_BANK_GOTHIC,
                       ),
                     ),
                   ],
