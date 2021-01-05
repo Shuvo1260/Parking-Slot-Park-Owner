@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:parking_slot_seller/Features/Screens/login.dart';
+import 'package:parking_slot_seller/Features/Widgets/splash_screen_widgets.dart';
 import 'package:parking_slot_seller/Resources/assets.dart';
 import 'package:parking_slot_seller/Resources/colors.dart';
 import 'package:parking_slot_seller/Resources/strings.dart';
@@ -68,26 +69,7 @@ class _SplashScreenState extends State<SplashScreen> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Flexible(
-                flex: 2,
-                child: Center(
-                  child: Padding(
-                    padding: EdgeInsets.all(20.0),
-                    child: Container(
-                      height: 300.0,
-                      // height: double.infinity,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(IMAGE_CAR_BACKGROUND_CLOUD),
-                        ),
-                      ),
-                      child: Image.asset(
-                        IMAGE_LAUNCHER_ICON,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
+              SplashLogo(),
               Flexible(
                 flex: 1,
                 child: Column(
