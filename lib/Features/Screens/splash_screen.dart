@@ -53,37 +53,38 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-          child: Column(
-        children: [
-          Container(
-            height: double.infinity,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.bottomCenter,
-                end: Alignment.topCenter,
-                colors: [COLOR_CARIBBEAN_GREEN, COLOR_SHAMROCK],
+        child: Column(
+          children: [
+            Container(
+              height: double.infinity,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.bottomCenter,
+                  end: Alignment.topCenter,
+                  colors: [COLOR_CARIBBEAN_GREEN, COLOR_SHAMROCK],
+                ),
               ),
-            ),
-            child: Center(
-              child: Padding(
-                padding: EdgeInsets.all(20.0),
-                child: Container(
-                  height: double.infinity,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage(IMAGE_CAR_BACKGROUND_CLOUD),
+              child: Center(
+                child: Padding(
+                  padding: EdgeInsets.all(20.0),
+                  child: Container(
+                    height: double.infinity,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage(IMAGE_CAR_BACKGROUND_CLOUD),
+                      ),
                     ),
-                  ),
-                  child: Image.asset(
-                    IMAGE_LAUNCHER_ICON,
+                    child: Image.asset(
+                      IMAGE_LAUNCHER_ICON,
+                    ),
                   ),
                 ),
               ),
             ),
-          ),
-        ],
-      )),
+          ],
+        ),
+      ),
     );
   }
 
