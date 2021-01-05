@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:parking_slot_seller/Features/Screens/login.dart';
+import 'package:parking_slot_seller/Resources/assets.dart';
+import 'package:parking_slot_seller/Resources/colors.dart';
 
 void main() => runApp(
       MyApp(),
@@ -37,7 +39,7 @@ class _SplashScreenState extends State<SplashScreen> {
     // Start full screen
     SystemChrome.setEnabledSystemUIOverlays([]);
 
-    loadScreen();
+    // loadScreen();
   }
 
   @override
@@ -52,7 +54,18 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          child: Text("Temp"),
+          height: double.infinity,
+          width: double.infinity,
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.bottomCenter,
+              end: Alignment.topCenter,
+              colors: [COLOR_CARIBBEAN_GREEN, COLOR_SHAMROCK],
+            ),
+          ),
+          child: Center(
+            child: Image.asset(IMAGE_LAUNCHER_ICON),
+          ),
         ),
       ),
     );
