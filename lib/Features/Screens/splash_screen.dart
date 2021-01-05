@@ -90,7 +90,27 @@ class _SplashScreenState extends State<SplashScreen> {
               ),
               Flexible(
                 flex: 1,
-                child: Text(APP_NAME),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      APP_NAME,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text(
+                      SPLASH_SCREEN_MESSAGE,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
