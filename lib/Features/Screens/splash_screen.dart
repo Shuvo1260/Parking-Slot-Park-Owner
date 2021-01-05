@@ -64,7 +64,20 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
           ),
           child: Center(
-            child: Image.asset(IMAGE_LAUNCHER_ICON),
+            child: Padding(
+              padding: EdgeInsets.all(20.0),
+              child: Container(
+                height: double.infinity,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(IMAGE_CAR_BACKGROUND_CLOUD),
+                  ),
+                ),
+                child: Image.asset(
+                  IMAGE_LAUNCHER_ICON,
+                ),
+              ),
+            ),
           ),
         ),
       ),
