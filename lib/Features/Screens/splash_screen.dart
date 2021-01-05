@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 import 'package:parking_slot_seller/Features/Screens/login.dart';
 import 'package:parking_slot_seller/Resources/assets.dart';
 import 'package:parking_slot_seller/Resources/colors.dart';
+import 'package:parking_slot_seller/Resources/strings.dart';
 
 void main() => runApp(
       MyApp(),
@@ -64,25 +65,32 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
           ),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Center(
-                child: Padding(
-                  padding: EdgeInsets.all(20.0),
-                  child: Container(
-                    height: 300.0,
-                    // height: double.infinity,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage(IMAGE_CAR_BACKGROUND_CLOUD),
+              Flexible(
+                flex: 2,
+                child: Center(
+                  child: Padding(
+                    padding: EdgeInsets.all(20.0),
+                    child: Container(
+                      height: 300.0,
+                      // height: double.infinity,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(IMAGE_CAR_BACKGROUND_CLOUD),
+                        ),
                       ),
-                    ),
-                    child: Image.asset(
-                      IMAGE_LAUNCHER_ICON,
+                      child: Image.asset(
+                        IMAGE_LAUNCHER_ICON,
+                      ),
                     ),
                   ),
                 ),
+              ),
+              Flexible(
+                flex: 1,
+                child: Text(APP_NAME),
               ),
             ],
           ),
