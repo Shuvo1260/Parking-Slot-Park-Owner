@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:parking_slot_seller/Features/Screens/login.dart';
-import 'package:parking_slot_seller/Features/Widgets/splash_screen_widgets.dart';
+import 'package:parking_slot_seller/Features/Widgets/widgets_splash_screen.dart';
 import 'package:parking_slot_seller/Resources/colors.dart';
 
 void main() => runApp(
