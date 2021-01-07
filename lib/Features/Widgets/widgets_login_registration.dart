@@ -80,7 +80,7 @@ class _WidgetLoginBottomState extends State<WidgetLoginBottom> {
               print(value);
             },
             hint: HINT_EMAIL,
-            keyboarType: TextInputType.emailAddress,
+            keyboardType: TextInputType.emailAddress,
           ),
           SizedBox(
             height: 30.0,
@@ -90,7 +90,7 @@ class _WidgetLoginBottomState extends State<WidgetLoginBottom> {
               print(value);
             },
             hint: HINT_PASSWORD,
-            keyboarType: TextInputType.visiblePassword,
+            keyboardType: TextInputType.visiblePassword,
           ),
         ],
       ),
@@ -101,8 +101,8 @@ class _WidgetLoginBottomState extends State<WidgetLoginBottom> {
 class _TextField extends StatelessWidget {
   Function onTextChange;
   var hint;
-  var keyboarType;
-  _TextField(this.onTextChange, {this.hint, this.keyboarType});
+  var keyboardType;
+  _TextField(this.onTextChange, {this.hint, this.keyboardType});
 
   @override
   Widget build(BuildContext context) {
