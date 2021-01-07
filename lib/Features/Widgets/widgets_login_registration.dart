@@ -93,7 +93,7 @@ class SubmitButton extends StatelessWidget {
         },
         child: Center(
           child: Text(
-            "Login",
+            HINT_LOGIN,
             style: TextStyle(
               color: Colors.white,
               fontSize: FONT_SIZE_BUTTON,

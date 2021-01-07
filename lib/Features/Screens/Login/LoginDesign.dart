@@ -54,6 +54,9 @@ class _DesignLoginBottomState extends State<DesignLoginBottom> {
                 print("Pressed");
               },
             ),
+            SizedBox(
+              height: 30.0,
+            ),
           ],
         ),
       ),

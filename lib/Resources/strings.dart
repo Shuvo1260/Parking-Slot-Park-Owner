@@ -10,3 +10,5 @@ const TAG_CAR_LOGO = "CarLogo";
 // Hints
 const HINT_EMAIL = "Email";
 const HINT_PASSWORD = "Password";
+const HINT_LOGIN = "Login";
+const HINT_REGISTRATION = "Registration";
