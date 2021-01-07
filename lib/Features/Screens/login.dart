@@ -38,7 +38,14 @@ class _LoginScreenState extends State<LoginScreen> {
           child: SafeArea(
             child: Column(
               children: [
-                WidgetTopLogo(),
+                Flexible(
+                  flex: 1,
+                  child: WidgetTopLogo(),
+                ),
+                Flexible(
+                  flex: 3,
+                  child: WidgetLoginBottom(),
+                ),
               ],
             ),
           ),
