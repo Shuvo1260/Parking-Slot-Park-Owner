@@ -35,7 +35,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   children: [
                     Flexible(
                       flex: 1,
-                      child: WidgetTopLogo(),
+                      child: WidgetTopLogo(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                      ),
                     ),
                     Flexible(
                       flex: 3,

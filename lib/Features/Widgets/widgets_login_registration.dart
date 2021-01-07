@@ -6,9 +6,9 @@ import 'package:parking_slot_seller/Resources/strings.dart';
 import 'package:parking_slot_seller/Resources/values.dart';
 
 class WidgetTopLogo extends StatelessWidget {
-  var crossAxisAlignment;
+  CrossAxisAlignment crossAxisAlignment;
 
-  WidgetTopLogo({@required this.crossAxisAlignment})
+  WidgetTopLogo({@required this.crossAxisAlignment});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class WidgetTopLogo extends StatelessWidget {
       padding: EdgeInsets.all(10.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: crossAxisAlignment,
         children: [
           _WidgetCarLogo(),
           _WidgetTopText(LOGIN_SCREEN_TOP_TEXT),
