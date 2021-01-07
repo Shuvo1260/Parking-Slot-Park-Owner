@@ -74,8 +74,8 @@ class _WidgetLoginBottomState extends State<WidgetLoginBottom> {
       ),
       child: Padding(
         padding: EdgeInsets.only(
-          left: LOGIN_FIELDS_PADDING_HORIZONTAL,
-          right: LOGIN_FIELDS_PADDING_HORIZONTAL,
+          left: LOGIN_BOTTOM_PADDING_HORIZONTAL,
+          right: LOGIN_BOTTOM_PADDING_HORIZONTAL,
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -138,8 +138,11 @@ class _TextField extends StatelessWidget {
             )
           ]),
       child: Padding(
-        padding:
-            EdgeInsets.only(left: 20.0, top: 5.0, right: 20.0, bottom: 5.0),
+        padding: EdgeInsets.only(
+            left: LOGIN_FIELDS_PADDING_HORIZONTAL,
+            top: LOGIN_FIELDS_PADDING_VERTICAL,
+            right: LOGIN_FIELDS_PADDING_HORIZONTAL,
+            bottom: LOGIN_FIELDS_PADDING_VERTICAL),
         child: TextField(
           obscureText: obscure,
           decoration: InputDecoration(
