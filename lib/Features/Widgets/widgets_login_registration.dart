@@ -79,7 +79,7 @@ class _WidgetLoginBottomState extends State<WidgetLoginBottom> {
             (value) {
               print(value);
             },
-            hint: "Email",
+            hint: HINT_EMAIL,
             keyboarType: TextInputType.emailAddress,
           ),
         ],
