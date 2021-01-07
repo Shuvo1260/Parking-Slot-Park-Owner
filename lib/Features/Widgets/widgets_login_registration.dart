@@ -55,7 +55,12 @@ class _WidgetTopText extends StatelessWidget {
   }
 }
 
-class WidgetLoginBottom extends StatelessWidget {
+class WidgetLoginBottom extends StatefulWidget {
+  @override
+  _WidgetLoginBottomState createState() => _WidgetLoginBottomState();
+}
+
+class _WidgetLoginBottomState extends State<WidgetLoginBottom> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -65,6 +70,11 @@ class WidgetLoginBottom extends StatelessWidget {
           topLeft: Radius.circular(LOGIN_REGISTRATION_BOTTOM_RADIUS),
           topRight: Radius.circular(LOGIN_REGISTRATION_BOTTOM_RADIUS),
         ),
+      ),
+      child: Column(
+        children: [
+          //
+        ],
       ),
     );
   }
