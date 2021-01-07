@@ -100,6 +100,15 @@ class _WidgetLoginBottomState extends State<WidgetLoginBottom> {
   }
 }
 
+class _SubmitButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      child: Container(),
+    );
+  }
+}
+
 class _TextField extends StatelessWidget {
   Function onTextChange;
   var hint;
