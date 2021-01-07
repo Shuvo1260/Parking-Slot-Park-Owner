@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:parking_slot_seller/Resources/assets.dart';
+import 'package:parking_slot_seller/Resources/strings.dart';
 
 class WidgetTopLogo extends StatelessWidget {
   @override
@@ -12,7 +13,7 @@ class WidgetTopLogo extends StatelessWidget {
             height: 10.0,
           ),
           _WidgetCarLogo(),
-          _WidgetTopText("Welcome"),
+          _WidgetTopText(LOGIN_SCREEN_TOP_TEXT),
         ],
       ),
     );
