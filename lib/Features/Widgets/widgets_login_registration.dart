@@ -176,13 +176,15 @@ class BottomOption extends StatelessWidget {
   Widget build(BuildContext context) {
     return FlatButton(
       onPressed: onPressed,
-      child: Text(
-        text,
-        style: TextStyle(
-          color: COLOR_CARIBBEAN_GREEN,
-          fontSize: FONT_SIZE_LOGIN_FIELDS,
-          fontWeight: FontWeight.bold,
-          fontFamily: FONT_BANK_GOTHIC,
+      child: Center(
+        child: Text(
+          text,
+          style: TextStyle(
+            color: COLOR_CARIBBEAN_GREEN,
+            fontSize: FONT_SIZE_LOGIN_FIELDS,
+            fontWeight: FontWeight.bold,
+            fontFamily: FONT_BANK_GOTHIC,
+          ),
         ),
       ),
     );

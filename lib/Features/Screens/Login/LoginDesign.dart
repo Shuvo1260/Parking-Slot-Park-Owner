@@ -55,7 +55,7 @@ class _DesignLoginBottomState extends State<DesignLoginBottom> {
               },
             ),
             SizedBox(
-              height: 30.0,
+              height: 20.0,
             ),
             BottomOption(
               text: CREATE_A_NEW_ACCOUNT,
