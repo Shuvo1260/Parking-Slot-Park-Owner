@@ -4,9 +4,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:parking_slot_seller/Features/Screens/login.dart';
 import 'package:parking_slot_seller/Features/Widgets/widgets_splash_screen.dart';
 import 'package:parking_slot_seller/Resources/colors.dart';
+
+import 'file:///D:/Works/Project/parking_slot_seller/lib/Features/Screens/Login/login.dart';
 
 void main() => runApp(
       MyApp(),

@@ -1,0 +1,62 @@
+import 'package:flutter/material.dart';
+import 'package:parking_slot_seller/Features/Widgets/widgets_login_registration.dart';
+import 'package:parking_slot_seller/Resources/strings.dart';
+import 'package:parking_slot_seller/Resources/values.dart';
+
+class DesignLoginBottom extends StatefulWidget {
+  @override
+  _DesignLoginBottomState createState() => _DesignLoginBottomState();
+}
+
+class _DesignLoginBottomState extends State<DesignLoginBottom> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(RADIUS_LOGIN_REGISTRATION_BOTTOM),
+          topRight: Radius.circular(RADIUS_LOGIN_REGISTRATION_BOTTOM),
+        ),
+      ),
+      child: Padding(
+        padding: EdgeInsets.symmetric(
+          horizontal: PADDING_HORIZONTAL_LOGIN_BOTTOM,
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            LoginTextField(
+              (value) {
+                print(value);
+              },
+              hint: HINT_EMAIL,
+              keyboardType: TextInputType.emailAddress,
+              obscure: false,
+            ),
+            SizedBox(
+              height: 30.0,
+            ),
+            LoginTextField(
+              (value) {
+                print(value);
+              },
+              hint: HINT_PASSWORD,
+              keyboardType: TextInputType.visiblePassword,
+              obscure: true,
+            ),
+            SizedBox(
+              height: 50.0,
+            ),
+            SubmitButton(
+              onPressed: () {
+                print("Pressed");
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

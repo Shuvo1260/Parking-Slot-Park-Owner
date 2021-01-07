@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:parking_slot_seller/Features/Widgets/widgets_login_registration.dart';
 import 'package:parking_slot_seller/Resources/colors.dart';
 
+import 'LoginDesign.dart';
+
 class LoginScreen extends StatefulWidget {
   @override
   _LoginScreenState createState() => _LoginScreenState();
@@ -37,7 +39,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     Flexible(
                       flex: 3,
-                      child: WidgetLoginBottom(),
+                      child: DesignLoginBottom(),
                     ),
                   ],
                 ),

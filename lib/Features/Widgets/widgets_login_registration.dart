@@ -6,6 +6,10 @@ import 'package:parking_slot_seller/Resources/strings.dart';
 import 'package:parking_slot_seller/Resources/values.dart';
 
 class WidgetTopLogo extends StatelessWidget {
+  var crossAxisAlignment;
+
+  WidgetTopLogo({@required this.crossAxisAlignment})
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -57,67 +61,9 @@ class _WidgetTopText extends StatelessWidget {
   }
 }
 
-class WidgetLoginBottom extends StatefulWidget {
-  @override
-  _WidgetLoginBottomState createState() => _WidgetLoginBottomState();
-}
-
-class _WidgetLoginBottomState extends State<WidgetLoginBottom> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(RADIUS_LOGIN_REGISTRATION_BOTTOM),
-          topRight: Radius.circular(RADIUS_LOGIN_REGISTRATION_BOTTOM),
-        ),
-      ),
-      child: Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal: PADDING_HORIZONTAL_LOGIN_BOTTOM,
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            _TextField(
-              (value) {
-                print(value);
-              },
-              hint: HINT_EMAIL,
-              keyboardType: TextInputType.emailAddress,
-              obscure: false,
-            ),
-            SizedBox(
-              height: 30.0,
-            ),
-            _TextField(
-              (value) {
-                print(value);
-              },
-              hint: HINT_PASSWORD,
-              keyboardType: TextInputType.visiblePassword,
-              obscure: true,
-            ),
-            SizedBox(
-              height: 50.0,
-            ),
-            _SubmitButton(
-              onPressed: () {
-                print("Pressed");
-              },
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class _SubmitButton extends StatelessWidget {
+class SubmitButton extends StatelessWidget {
   Function onPressed;
-  _SubmitButton({@required this.onPressed});
+  SubmitButton({@required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -161,12 +107,12 @@ class _SubmitButton extends StatelessWidget {
   }
 }
 
-class _TextField extends StatelessWidget {
+class LoginTextField extends StatelessWidget {
   Function onTextChange;
   var hint;
   var keyboardType;
   var obscure;
-  _TextField(this.onTextChange,
+  LoginTextField(this.onTextChange,
       {this.hint, this.keyboardType, @required this.obscure});
 
   @override
