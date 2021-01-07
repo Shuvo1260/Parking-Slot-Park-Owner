@@ -121,8 +121,8 @@ class _TextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(
-        left: 30.0,
-        right: 30.0,
+        left: LOGIN_FIELDS_PADDING_HORIZONTAL,
+        right: LOGIN_FIELDS_PADDING_HORIZONTAL,
       ),
       child: Container(
         decoration: BoxDecoration(
