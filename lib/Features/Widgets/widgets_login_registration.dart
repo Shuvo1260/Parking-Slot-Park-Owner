@@ -79,6 +79,7 @@ class _WidgetLoginBottomState extends State<WidgetLoginBottom> {
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             _TextField(
               (value) {
@@ -99,6 +100,10 @@ class _WidgetLoginBottomState extends State<WidgetLoginBottom> {
               keyboardType: TextInputType.visiblePassword,
               obscure: true,
             ),
+            SizedBox(
+              height: 30.0,
+            ),
+            _SubmitButton()
           ],
         ),
       ),
@@ -109,7 +114,27 @@ class _WidgetLoginBottomState extends State<WidgetLoginBottom> {
 class _SubmitButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.bottomCenter,
+          end: Alignment.topCenter,
+          colors: [COLOR_CARIBBEAN_GREEN, COLOR_SHAMROCK],
+        ),
+        borderRadius: BorderRadius.all(
+          Radius.circular(15.0),
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.5),
+            spreadRadius: 3,
+            blurRadius: 7,
+            offset: Offset(0, 3),
+          )
+        ],
+      ),
+      child: Text("Login"),
+    );
   }
 }
 
@@ -125,18 +150,19 @@ class _TextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.all(
-            Radius.circular(15.0),
-          ),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.5),
-              spreadRadius: 3,
-              blurRadius: 7,
-              offset: Offset(0, 3),
-            )
-          ]),
+        color: Colors.white,
+        borderRadius: BorderRadius.all(
+          Radius.circular(15.0),
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.5),
+            spreadRadius: 3,
+            blurRadius: 7,
+            offset: Offset(0, 3),
+          )
+        ],
+      ),
       child: Padding(
         padding: EdgeInsets.only(
             left: LOGIN_FIELDS_PADDING_HORIZONTAL,
