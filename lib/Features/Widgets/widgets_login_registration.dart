@@ -133,15 +133,20 @@ class _SubmitButton extends StatelessWidget {
           )
         ],
       ),
-      padding: EdgeInsets.symmetric(vertical: PADDING_VERTICAL_BUTTON),
-      child: Center(
-        child: Text(
-          "Login",
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: FONT_SIZE_BUTTON,
-            fontWeight: FontWeight.bold,
-            fontFamily: FONT_BANK_GOTHIC,
+      child: FlatButton(
+        padding: EdgeInsets.symmetric(vertical: PADDING_VERTICAL_BUTTON),
+        onPressed: () {
+          //
+        },
+        child: Center(
+          child: Text(
+            "Login",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: FONT_SIZE_BUTTON,
+              fontWeight: FontWeight.bold,
+              fontFamily: FONT_BANK_GOTHIC,
+            ),
           ),
         ),
       ),
