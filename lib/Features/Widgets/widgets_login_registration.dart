@@ -103,7 +103,11 @@ class _WidgetLoginBottomState extends State<WidgetLoginBottom> {
             SizedBox(
               height: 50.0,
             ),
-            _SubmitButton()
+            _SubmitButton(
+              onPressed: () {
+                print("Pressed");
+              },
+            ),
           ],
         ),
       ),
@@ -112,6 +116,9 @@ class _WidgetLoginBottomState extends State<WidgetLoginBottom> {
 }
 
 class _SubmitButton extends StatelessWidget {
+  Function onPressed;
+  _SubmitButton({@required this.onPressed});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -136,7 +143,7 @@ class _SubmitButton extends StatelessWidget {
       child: FlatButton(
         padding: EdgeInsets.symmetric(vertical: PADDING_VERTICAL_BUTTON),
         onPressed: () {
-          //
+          onPressed();
         },
         child: Center(
           child: Text(
