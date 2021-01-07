@@ -42,7 +42,7 @@ class _WidgetTopText extends StatelessWidget {
         text,
         style: TextStyle(
           color: Colors.white,
-          fontSize: 24.0,
+          fontSize: 34.0,
           fontWeight: FontWeight.bold,
           fontFamily: FONT_BANK_GOTHIC,
         ),
