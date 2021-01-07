@@ -69,8 +69,8 @@ class _WidgetLoginBottomState extends State<WidgetLoginBottom> {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(LOGIN_REGISTRATION_BOTTOM_RADIUS),
-          topRight: Radius.circular(LOGIN_REGISTRATION_BOTTOM_RADIUS),
+          topLeft: Radius.circular(RADIUS_LOGIN_REGISTRATION_BOTTOM),
+          topRight: Radius.circular(RADIUS_LOGIN_REGISTRATION_BOTTOM),
         ),
       ),
       child: Padding(
@@ -197,7 +197,7 @@ class _TextField extends StatelessWidget {
           },
           style: TextStyle(
             color: COLOR_CARIBBEAN_GREEN,
-            fontSize: LOGIN_FIELDS_TEXT_SIZE,
+            fontSize: FONT_SIZE_LOGIN_FIELDS,
             fontFamily: FONT_BANK_GOTHIC,
           ),
           keyboardType: keyboardType,
