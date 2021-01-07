@@ -140,6 +140,7 @@ class _SubmitButton extends StatelessWidget {
           "Login",
           style: TextStyle(
             color: Colors.white,
+            fontSize: 45.0,
           ),
         ),
       ),
@@ -195,7 +196,7 @@ class _TextField extends StatelessWidget {
           },
           style: TextStyle(
             color: COLOR_CARIBBEAN_GREEN,
-            fontSize: 20.0,
+            fontSize: LOGIN_FIELDS_TEXT_SIZE,
             fontFamily: FONT_BANK_GOTHIC,
           ),
           keyboardType: keyboardType,
