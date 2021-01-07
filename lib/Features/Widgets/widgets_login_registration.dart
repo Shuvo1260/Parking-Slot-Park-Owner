@@ -82,6 +82,16 @@ class _WidgetLoginBottomState extends State<WidgetLoginBottom> {
             hint: HINT_EMAIL,
             keyboarType: TextInputType.emailAddress,
           ),
+          SizedBox(
+            height: 30.0,
+          ),
+          _TextField(
+            (value) {
+              print(value);
+            },
+            hint: HINT_PASSWORD,
+            keyboarType: TextInputType.visiblePassword,
+          ),
         ],
       ),
     );
