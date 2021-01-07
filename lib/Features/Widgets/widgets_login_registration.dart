@@ -133,7 +133,9 @@ class _SubmitButton extends StatelessWidget {
           )
         ],
       ),
-      child: Text("Login"),
+      child: Center(
+        child: Text("Login"),
+      ),
     );
   }
 }
