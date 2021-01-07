@@ -74,9 +74,8 @@ class _WidgetLoginBottomState extends State<WidgetLoginBottom> {
         ),
       ),
       child: Padding(
-        padding: EdgeInsets.only(
-          left: LOGIN_BOTTOM_PADDING_HORIZONTAL,
-          right: LOGIN_BOTTOM_PADDING_HORIZONTAL,
+        padding: EdgeInsets.symmetric(
+          horizontal: PADDING_HORIZONTAL_LOGIN_BOTTOM,
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -134,13 +133,15 @@ class _SubmitButton extends StatelessWidget {
           )
         ],
       ),
-      padding: EdgeInsets.symmetric(vertical: LOGIN_FIELDS_PADDING_VERTICAL),
+      padding: EdgeInsets.symmetric(vertical: PADDING_VERTICAL_BUTTON),
       child: Center(
         child: Text(
           "Login",
           style: TextStyle(
             color: Colors.white,
-            fontSize: 45.0,
+            fontSize: FONT_SIZE_BUTTON,
+            fontWeight: FontWeight.bold,
+            fontFamily: FONT_BANK_GOTHIC,
           ),
         ),
       ),
@@ -175,8 +176,8 @@ class _TextField extends StatelessWidget {
       ),
       child: Padding(
         padding: EdgeInsets.symmetric(
-          horizontal: LOGIN_FIELDS_PADDING_HORIZONTAL,
-          vertical: LOGIN_FIELDS_PADDING_VERTICAL,
+          horizontal: PADDING_HORIZONTAL_LOGIN_FIELDS,
+          vertical: PADDING_VERTICAL_LOGIN_FIELDS,
         ),
         child: TextField(
           obscureText: obscure,
