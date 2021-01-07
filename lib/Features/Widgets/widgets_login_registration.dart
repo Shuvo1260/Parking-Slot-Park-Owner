@@ -81,6 +81,7 @@ class _WidgetLoginBottomState extends State<WidgetLoginBottom> {
             },
             hint: HINT_EMAIL,
             keyboardType: TextInputType.emailAddress,
+            obscure: false,
           ),
           SizedBox(
             height: 30.0,
@@ -91,6 +92,7 @@ class _WidgetLoginBottomState extends State<WidgetLoginBottom> {
             },
             hint: HINT_PASSWORD,
             keyboardType: TextInputType.visiblePassword,
+            obscure: true,
           ),
         ],
       ),
@@ -102,7 +104,9 @@ class _TextField extends StatelessWidget {
   Function onTextChange;
   var hint;
   var keyboardType;
-  _TextField(this.onTextChange, {this.hint, this.keyboardType});
+  var obscure;
+  _TextField(this.onTextChange,
+      {this.hint, this.keyboardType, @required this.obscure});
 
   @override
   Widget build(BuildContext context) {
@@ -129,6 +133,7 @@ class _TextField extends StatelessWidget {
           padding:
               EdgeInsets.only(left: 20.0, top: 5.0, right: 20.0, bottom: 5.0),
           child: TextField(
+            obscureText: obscure,
             decoration: InputDecoration(
               hintText: hint,
               enabledBorder: InputBorder.none,
@@ -148,7 +153,7 @@ class _TextField extends StatelessWidget {
               fontSize: 20.0,
               fontFamily: FONT_BANK_GOTHIC,
             ),
-            keyboardType: keyboarType,
+            keyboardType: keyboardType,
           ),
         ),
       ),
