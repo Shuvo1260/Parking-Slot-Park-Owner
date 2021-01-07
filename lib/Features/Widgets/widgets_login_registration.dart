@@ -101,7 +101,7 @@ class _WidgetLoginBottomState extends State<WidgetLoginBottom> {
               obscure: true,
             ),
             SizedBox(
-              height: 30.0,
+              height: 50.0,
             ),
             _SubmitButton()
           ],
