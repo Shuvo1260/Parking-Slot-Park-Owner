@@ -112,6 +112,7 @@ class LoginTextField extends StatelessWidget {
   var hint;
   var keyboardType;
   var obscure;
+
   LoginTextField(this.onTextChange,
       {this.hint, this.keyboardType, @required this.obscure});
 
@@ -159,6 +160,29 @@ class LoginTextField extends StatelessWidget {
             fontFamily: FONT_BANK_GOTHIC,
           ),
           keyboardType: keyboardType,
+        ),
+      ),
+    );
+  }
+}
+
+class BottomOption extends StatelessWidget {
+  Function onPressed;
+  var text;
+
+  BottomOption({@required this.text, @required this.onPressed});
+
+  @override
+  Widget build(BuildContext context) {
+    return FlatButton(
+      onPressed: onPressed,
+      child: Text(
+        text,
+        style: TextStyle(
+          color: COLOR_CARIBBEAN_GREEN,
+          fontSize: FONT_SIZE_LOGIN_FIELDS,
+          fontWeight: FontWeight.bold,
+          fontFamily: FONT_BANK_GOTHIC,
         ),
       ),
     );
