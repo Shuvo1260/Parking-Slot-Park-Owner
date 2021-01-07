@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:parking_slot_seller/Resources/assets.dart';
 import 'package:parking_slot_seller/Resources/colors.dart';
@@ -133,6 +134,7 @@ class _SubmitButton extends StatelessWidget {
           )
         ],
       ),
+      padding: EdgeInsets.symmetric(vertical: LOGIN_FIELDS_PADDING_VERTICAL),
       child: Center(
         child: Text("Login"),
       ),
@@ -166,11 +168,10 @@ class _TextField extends StatelessWidget {
         ],
       ),
       child: Padding(
-        padding: EdgeInsets.only(
-            left: LOGIN_FIELDS_PADDING_HORIZONTAL,
-            top: LOGIN_FIELDS_PADDING_VERTICAL,
-            right: LOGIN_FIELDS_PADDING_HORIZONTAL,
-            bottom: LOGIN_FIELDS_PADDING_VERTICAL),
+        padding: EdgeInsets.symmetric(
+          horizontal: LOGIN_FIELDS_PADDING_HORIZONTAL,
+          vertical: LOGIN_FIELDS_PADDING_VERTICAL,
+        ),
         child: TextField(
           obscureText: obscure,
           decoration: InputDecoration(
