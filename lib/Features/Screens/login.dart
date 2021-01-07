@@ -37,6 +37,7 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
           child: SafeArea(
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Flexible(
                   flex: 1,

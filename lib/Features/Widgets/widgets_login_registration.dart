@@ -6,12 +6,11 @@ class WidgetTopLogo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.all(10.0),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(
-            height: 10.0,
-          ),
           _WidgetCarLogo(),
           _WidgetTopText(LOGIN_SCREEN_TOP_TEXT),
         ],
@@ -26,7 +25,7 @@ class _WidgetCarLogo extends StatelessWidget {
     return Container(
       child: Image.asset(
         IMAGE_LAUNCHER_ICON,
-        height: 80.0,
+        height: 70.0,
       ),
     );
   }
