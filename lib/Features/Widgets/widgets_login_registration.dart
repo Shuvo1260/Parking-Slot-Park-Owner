@@ -72,29 +72,35 @@ class _WidgetLoginBottomState extends State<WidgetLoginBottom> {
           topRight: Radius.circular(LOGIN_REGISTRATION_BOTTOM_RADIUS),
         ),
       ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          _TextField(
-            (value) {
-              print(value);
-            },
-            hint: HINT_EMAIL,
-            keyboardType: TextInputType.emailAddress,
-            obscure: false,
-          ),
-          SizedBox(
-            height: 30.0,
-          ),
-          _TextField(
-            (value) {
-              print(value);
-            },
-            hint: HINT_PASSWORD,
-            keyboardType: TextInputType.visiblePassword,
-            obscure: true,
-          ),
-        ],
+      child: Padding(
+        padding: EdgeInsets.only(
+          left: LOGIN_FIELDS_PADDING_HORIZONTAL,
+          right: LOGIN_FIELDS_PADDING_HORIZONTAL,
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            _TextField(
+              (value) {
+                print(value);
+              },
+              hint: HINT_EMAIL,
+              keyboardType: TextInputType.emailAddress,
+              obscure: false,
+            ),
+            SizedBox(
+              height: 30.0,
+            ),
+            _TextField(
+              (value) {
+                print(value);
+              },
+              hint: HINT_PASSWORD,
+              keyboardType: TextInputType.visiblePassword,
+              obscure: true,
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -103,9 +109,7 @@ class _WidgetLoginBottomState extends State<WidgetLoginBottom> {
 class _SubmitButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      child: Container(),
-    );
+    return Container();
   }
 }
 
@@ -119,51 +123,45 @@ class _TextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(
-        left: LOGIN_FIELDS_PADDING_HORIZONTAL,
-        right: LOGIN_FIELDS_PADDING_HORIZONTAL,
-      ),
-      child: Container(
-        decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.all(
-              Radius.circular(15.0),
-            ),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey.withOpacity(0.5),
-                spreadRadius: 3,
-                blurRadius: 7,
-                offset: Offset(0, 3),
-              )
-            ]),
-        child: Padding(
-          padding:
-              EdgeInsets.only(left: 20.0, top: 5.0, right: 20.0, bottom: 5.0),
-          child: TextField(
-            obscureText: obscure,
-            decoration: InputDecoration(
-              hintText: hint,
-              enabledBorder: InputBorder.none,
-              focusedBorder: InputBorder.none,
-              errorBorder: InputBorder.none,
-              disabledBorder: InputBorder.none,
-              hintStyle: TextStyle(
-                color: COLOR_SHAMROCK,
-                fontFamily: FONT_BANK_GOTHIC,
-              ),
-            ),
-            onChanged: (value) {
-              onTextChange(value);
-            },
-            style: TextStyle(
-              color: COLOR_CARIBBEAN_GREEN,
-              fontSize: 20.0,
+    return Container(
+      decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.all(
+            Radius.circular(15.0),
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.5),
+              spreadRadius: 3,
+              blurRadius: 7,
+              offset: Offset(0, 3),
+            )
+          ]),
+      child: Padding(
+        padding:
+            EdgeInsets.only(left: 20.0, top: 5.0, right: 20.0, bottom: 5.0),
+        child: TextField(
+          obscureText: obscure,
+          decoration: InputDecoration(
+            hintText: hint,
+            enabledBorder: InputBorder.none,
+            focusedBorder: InputBorder.none,
+            errorBorder: InputBorder.none,
+            disabledBorder: InputBorder.none,
+            hintStyle: TextStyle(
+              color: COLOR_SHAMROCK,
               fontFamily: FONT_BANK_GOTHIC,
             ),
-            keyboardType: keyboardType,
           ),
+          onChanged: (value) {
+            onTextChange(value);
+          },
+          style: TextStyle(
+            color: COLOR_CARIBBEAN_GREEN,
+            fontSize: 20.0,
+            fontFamily: FONT_BANK_GOTHIC,
+          ),
+          keyboardType: keyboardType,
         ),
       ),
     );
