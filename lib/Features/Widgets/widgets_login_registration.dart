@@ -23,10 +23,13 @@ class WidgetTopLogo extends StatelessWidget {
 class _WidgetCarLogo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Image.asset(
-        IMAGE_LAUNCHER_ICON,
-        height: 70.0,
+    return Hero(
+      tag: TAG_CAR_LOGO,
+      child: Container(
+        child: Image.asset(
+          IMAGE_LAUNCHER_ICON,
+          height: 70.0,
+        ),
       ),
     );
   }

@@ -11,19 +11,22 @@ class SplashLogo extends StatelessWidget {
       child: Center(
         child: Padding(
           padding: EdgeInsets.all(20.0),
-          child: Container(
-            height: 300.0,
-            // height: double.infinity,
-            // Creating background cloud image
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(IMAGE_CAR_BACKGROUND_CLOUD),
+          child: Hero(
+            tag: TAG_CAR_LOGO,
+            child: Container(
+              height: 300.0,
+              // height: double.infinity,
+              // Creating background cloud image
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(IMAGE_CAR_BACKGROUND_CLOUD),
+                ),
               ),
-            ),
 
-            // creating car image
-            child: Image.asset(
-              IMAGE_LAUNCHER_ICON,
+              // creating car image
+              child: Image.asset(
+                IMAGE_LAUNCHER_ICON,
+              ),
             ),
           ),
         ),
