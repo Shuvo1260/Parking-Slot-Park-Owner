@@ -24,18 +24,24 @@ class _LoginScreenState extends State<LoginScreen> {
         child: Scaffold(
           backgroundColor: Colors.transparent,
           body: SafeArea(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Flexible(
-                  flex: 1,
-                  child: WidgetTopLogo(),
+            child: SingleChildScrollView(
+              child: ConstrainedBox(
+                constraints: BoxConstraints(
+                    maxHeight: MediaQuery.of(context).size.height),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Flexible(
+                      flex: 1,
+                      child: WidgetTopLogo(),
+                    ),
+                    Flexible(
+                      flex: 3,
+                      child: WidgetLoginBottom(),
+                    ),
+                  ],
                 ),
-                Flexible(
-                  flex: 3,
-                  child: WidgetLoginBottom(),
-                ),
-              ],
+              ),
             ),
           ),
         ),
