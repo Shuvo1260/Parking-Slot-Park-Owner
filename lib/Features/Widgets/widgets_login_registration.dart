@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:parking_slot_seller/Resources/assets.dart';
 import 'package:parking_slot_seller/Resources/strings.dart';
+import 'package:parking_slot_seller/Resources/values.dart';
 
 class WidgetTopLogo extends StatelessWidget {
   @override
@@ -54,6 +55,14 @@ class _WidgetTopText extends StatelessWidget {
 class WidgetLoginBottom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(LOGIN_REGISTRATION_BOTTOM_RADIUS),
+          topRight: Radius.circular(LOGIN_REGISTRATION_BOTTOM_RADIUS),
+        ),
+      ),
+    );
   }
 }
