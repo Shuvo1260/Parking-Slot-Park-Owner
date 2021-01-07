@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:parking_slot_seller/Resources/assets.dart';
+import 'package:parking_slot_seller/Resources/colors.dart';
 import 'package:parking_slot_seller/Resources/strings.dart';
 import 'package:parking_slot_seller/Resources/values.dart';
 
@@ -72,9 +73,74 @@ class _WidgetLoginBottomState extends State<WidgetLoginBottom> {
         ),
       ),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          //
+          _TextField(
+            (value) {
+              print(value);
+            },
+            hint: "Email",
+            keyboarType: TextInputType.emailAddress,
+          ),
         ],
+      ),
+    );
+  }
+}
+
+class _TextField extends StatelessWidget {
+  Function onTextChange;
+  var hint;
+  var keyboarType;
+  _TextField(this.onTextChange, {this.hint, this.keyboarType});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.only(
+        left: 30.0,
+        right: 30.0,
+      ),
+      child: Container(
+        decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.all(
+              Radius.circular(15.0),
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.5),
+                spreadRadius: 3,
+                blurRadius: 7,
+                offset: Offset(0, 3),
+              )
+            ]),
+        child: Padding(
+          padding:
+              EdgeInsets.only(left: 20.0, top: 5.0, right: 20.0, bottom: 5.0),
+          child: TextField(
+            decoration: InputDecoration(
+              hintText: hint,
+              enabledBorder: InputBorder.none,
+              focusedBorder: InputBorder.none,
+              errorBorder: InputBorder.none,
+              disabledBorder: InputBorder.none,
+              hintStyle: TextStyle(
+                color: COLOR_SHAMROCK,
+                fontFamily: FONT_BANK_GOTHIC,
+              ),
+            ),
+            onChanged: (value) {
+              onTextChange(value);
+            },
+            style: TextStyle(
+              color: COLOR_CARIBBEAN_GREEN,
+              fontSize: 20.0,
+              fontFamily: FONT_BANK_GOTHIC,
+            ),
+            keyboardType: keyboarType,
+          ),
+        ),
       ),
     );
   }

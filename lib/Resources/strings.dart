@@ -6,3 +6,7 @@ const REGISTRATION_SCREEN_TOP_TEXT = "Registration";
 // Animations Tag
 
 const TAG_CAR_LOGO = "CarLogo";
+
+// Hints
+const HINT_EMAIL = "Email";
+const HINT_PASSWORD = "Password";
