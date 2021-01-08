@@ -9,22 +9,6 @@ import 'package:parking_slot_seller/Resources/colors.dart';
 
 import 'file:///D:/Works/Project/parking_slot_seller/lib/Features/Screens/Login/login.dart';
 
-void main() => runApp(
-      MyApp(),
-    );
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    // Creating app
-    return GetMaterialApp(
-      home: MaterialApp(
-        home: SplashScreen(),
-      ),
-    );
-  }
-}
-
 class SplashScreen extends StatefulWidget {
   @override
   _SplashScreenState createState() => _SplashScreenState();
