@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:parking_slot_seller/Features/Screens/Registration/RegistrationDesign.dart';
 import 'package:parking_slot_seller/Features/Widgets/widgets_login_registration.dart';
 import 'package:parking_slot_seller/Resources/colors.dart';
 
@@ -32,10 +33,10 @@ class RegistrationScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.end,
                       ),
                     ),
-                    // Flexible(
-                    //   flex: 3,
-                    //   // child: DesignRegistrationBottom(),
-                    // ),
+                    Flexible(
+                      flex: 3,
+                      child: RegistrationDesign(),
+                    ),
                   ],
                 ),
               ),
