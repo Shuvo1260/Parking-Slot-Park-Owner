@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:parking_slot_seller/Features/Screens/Registration/Registration.dart';
 import 'package:parking_slot_seller/Features/Widgets/widgets_login_registration.dart';
 import 'package:parking_slot_seller/Resources/strings.dart';
 import 'package:parking_slot_seller/Resources/values.dart';
@@ -59,7 +61,11 @@ class _DesignLoginBottomState extends State<DesignLoginBottom> {
             ),
             BottomOption(
               text: CREATE_A_NEW_ACCOUNT,
-              onPressed: () {},
+              onPressed: () {
+                Get.to(
+                  RegistrationScreen(),
+                );
+              },
             )
           ],
         ),

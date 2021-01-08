@@ -29,7 +29,7 @@ class RegistrationScreen extends StatelessWidget {
                     Flexible(
                       flex: 1,
                       child: WidgetTopLogo(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.end,
                       ),
                     ),
                     // Flexible(
