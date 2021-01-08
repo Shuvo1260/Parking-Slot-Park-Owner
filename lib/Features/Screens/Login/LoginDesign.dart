@@ -24,6 +24,7 @@ class _DesignLoginBottomState extends State<DesignLoginBottom> {
       child: Padding(
         padding: EdgeInsets.symmetric(
           horizontal: PADDING_HORIZONTAL_LOGIN_BOTTOM,
+          vertical: PADDING_VERTICAL_LOGIN_BOTTOM,
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

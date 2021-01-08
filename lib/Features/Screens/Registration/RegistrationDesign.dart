@@ -23,6 +23,7 @@ class _RegistrationDesignState extends State<RegistrationDesign> {
       child: Padding(
         padding: EdgeInsets.symmetric(
           horizontal: PADDING_HORIZONTAL_LOGIN_BOTTOM,
+          vertical: PADDING_VERTICAL_LOGIN_BOTTOM,
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
