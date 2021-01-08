@@ -24,21 +24,15 @@ class RegistrationScreen extends StatelessWidget {
             child: SingleChildScrollView(
               child: ConstrainedBox(
                 constraints: BoxConstraints(
-                    maxHeight: MediaQuery.of(context).size.height),
+                    minHeight: MediaQuery.of(context).size.height),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    Flexible(
-                      flex: 1,
-                      child: WidgetTopLogo(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        text: REGISTRATION_SCREEN_TOP_TEXT,
-                      ),
+                    WidgetTopLogo(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      text: REGISTRATION_SCREEN_TOP_TEXT,
                     ),
-                    Flexible(
-                      flex: 3,
-                      child: RegistrationDesign(),
-                    ),
+                    RegistrationDesign(),
                   ],
                 ),
               ),

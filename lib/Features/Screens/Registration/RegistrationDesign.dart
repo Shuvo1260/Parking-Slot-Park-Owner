@@ -33,6 +33,39 @@ class _RegistrationDesignState extends State<RegistrationDesign> {
               (value) {
                 print(value);
               },
+              hint: HINT_NAME,
+              keyboardType: TextInputType.text,
+              obscure: false,
+            ),
+            SizedBox(
+              height: 30.0,
+            ),
+            LoginTextField(
+              (value) {
+                print(value);
+              },
+              hint: HINT_PHONE,
+              keyboardType: TextInputType.phone,
+              obscure: false,
+            ),
+            SizedBox(
+              height: 30.0,
+            ),
+            LoginTextField(
+              (value) {
+                print(value);
+              },
+              hint: HINT_ADDRESS,
+              keyboardType: TextInputType.streetAddress,
+              obscure: false,
+            ),
+            SizedBox(
+              height: 30.0,
+            ),
+            LoginTextField(
+              (value) {
+                print(value);
+              },
               hint: HINT_EMAIL,
               keyboardType: TextInputType.emailAddress,
               obscure: false,
