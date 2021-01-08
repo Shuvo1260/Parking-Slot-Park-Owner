@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:parking_slot_seller/Features/Screens/Registration/RegistrationDesign.dart';
 import 'package:parking_slot_seller/Features/Widgets/widgets_login_registration.dart';
 import 'package:parking_slot_seller/Resources/colors.dart';
+import 'package:parking_slot_seller/Resources/strings.dart';
 
 class RegistrationScreen extends StatelessWidget {
   @override
@@ -31,6 +32,7 @@ class RegistrationScreen extends StatelessWidget {
                       flex: 1,
                       child: WidgetTopLogo(
                         crossAxisAlignment: CrossAxisAlignment.end,
+                        text: REGISTRATION_SCREEN_TOP_TEXT,
                       ),
                     ),
                     Flexible(

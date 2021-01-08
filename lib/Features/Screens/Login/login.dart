@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:parking_slot_seller/Features/Widgets/widgets_login_registration.dart';
 import 'package:parking_slot_seller/Resources/colors.dart';
+import 'package:parking_slot_seller/Resources/strings.dart';
 
 import 'LoginDesign.dart';
 
@@ -37,6 +38,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       flex: 1,
                       child: WidgetTopLogo(
                         crossAxisAlignment: CrossAxisAlignment.start,
+                        text: LOGIN_SCREEN_TOP_TEXT,
                       ),
                     ),
                     Flexible(
