@@ -181,7 +181,7 @@ class BottomOption extends StatelessWidget {
           text,
           style: TextStyle(
             color: COLOR_CARIBBEAN_GREEN,
-            fontSize: FONT_SIZE_LOGIN_FIELDS,
+            fontSize: FONT_SIZE_LOGIN_BOTTOM_OPTION,
             fontWeight: FontWeight.bold,
             fontFamily: FONT_BANK_GOTHIC,
           ),
