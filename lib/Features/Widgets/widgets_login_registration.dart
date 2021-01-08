@@ -63,7 +63,8 @@ class _WidgetTopText extends StatelessWidget {
 
 class SubmitButton extends StatelessWidget {
   Function onPressed;
-  SubmitButton({@required this.onPressed});
+  var text;
+  SubmitButton({@required this.onPressed, @required this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -93,7 +94,7 @@ class SubmitButton extends StatelessWidget {
         },
         child: Center(
           child: Text(
-            HINT_LOGIN,
+            text,
             style: TextStyle(
               color: Colors.white,
               fontSize: FONT_SIZE_BUTTON,

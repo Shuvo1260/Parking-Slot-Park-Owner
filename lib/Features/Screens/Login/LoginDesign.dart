@@ -53,6 +53,7 @@ class _DesignLoginBottomState extends State<DesignLoginBottom> {
               height: 50.0,
             ),
             SubmitButton(
+              text: HINT_LOGIN,
               onPressed: () {
                 print("Pressed");
               },

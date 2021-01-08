@@ -52,6 +52,7 @@ class _RegistrationDesignState extends State<RegistrationDesign> {
               height: 50.0,
             ),
             SubmitButton(
+              text: HINT_REGISTRATION,
               onPressed: () {
                 print("Pressed");
               },
