@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:parking_slot_seller/Resources/colors.dart';
 
 class MainActivity extends StatefulWidget {
   @override
@@ -6,8 +7,14 @@ class MainActivity extends StatefulWidget {
 }
 
 class _MainActivityState extends State<MainActivity> {
+  var appBarTitle = "Temp";
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(appBarTitle),
+        backgroundColor: COLOR_CARIBBEAN_GREEN,
+      ),
+    );
   }
 }
