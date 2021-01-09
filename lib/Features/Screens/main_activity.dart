@@ -15,6 +15,9 @@ class _MainActivityState extends State<MainActivity> {
         title: Text(appBarTitle),
         backgroundColor: COLOR_CARIBBEAN_GREEN,
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [],
+      ),
     );
   }
 }
