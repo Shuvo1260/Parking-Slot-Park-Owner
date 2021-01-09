@@ -11,7 +11,7 @@ const BOTTOM_NAVIGATION_ITEMS = [
   BottomNavigationBarItem(
     label: "Home",
     icon: Icon(
-      Icons.home,
+      Icons.account_circle,
     ),
   ),
 ];
