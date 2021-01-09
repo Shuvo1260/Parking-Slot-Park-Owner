@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:parking_slot_seller/Features/Screens/Registration/Registration.dart';
+import 'package:parking_slot_seller/Features/Screens/main_activity.dart';
 import 'package:parking_slot_seller/Features/Widgets/widgets_login_registration.dart';
 import 'package:parking_slot_seller/Resources/strings.dart';
 import 'package:parking_slot_seller/Resources/values.dart';
@@ -56,6 +57,9 @@ class _DesignLoginBottomState extends State<DesignLoginBottom> {
               text: HINT_LOGIN,
               onPressed: () {
                 print("Pressed");
+                Get.off(
+                  MainActivity(),
+                );
               },
             ),
             SizedBox(
