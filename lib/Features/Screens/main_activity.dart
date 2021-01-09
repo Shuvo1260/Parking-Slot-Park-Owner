@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:parking_slot_seller/Resources/colors.dart';
+import 'package:parking_slot_seller/Utils/Utils.dart';
 
 class MainActivity extends StatefulWidget {
   @override
@@ -16,7 +17,7 @@ class _MainActivityState extends State<MainActivity> {
         backgroundColor: COLOR_CARIBBEAN_GREEN,
       ),
       bottomNavigationBar: BottomNavigationBar(
-        items: [],
+        items: BOTTOM_NAVIGATION_ITEMS,
       ),
     );
   }
