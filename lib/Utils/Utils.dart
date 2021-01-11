@@ -9,7 +9,13 @@ const BOTTOM_NAVIGATION_ITEMS = [
     ),
   ),
   BottomNavigationBarItem(
-    label: "Home",
+    label: "History",
+    icon: Icon(
+      Icons.history,
+    ),
+  ),
+  BottomNavigationBarItem(
+    label: "Profile",
     icon: Icon(
       Icons.account_circle,
     ),
