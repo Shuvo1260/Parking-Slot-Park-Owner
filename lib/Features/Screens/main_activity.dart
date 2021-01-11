@@ -18,6 +18,7 @@ class _MainActivityState extends State<MainActivity> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: BOTTOM_NAVIGATION_ITEMS,
+        type: BottomNavigationBarType.fixed,
       ),
     );
   }
