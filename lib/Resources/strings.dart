@@ -17,3 +17,11 @@ const HINT_REGISTRATION = "Sign up";
 const HINT_NAME = "Name";
 const HINT_PHONE = "Phone";
 const HINT_ADDRESS = "Address";
+
+// Bottom navigation texts
+
+const BOTTOM_NAVIGATION_ITEM_1 = "Home";
+const BOTTOM_NAVIGATION_ITEM_2 = "Parked";
+const BOTTOM_NAVIGATION_ITEM_3 = "Pending";
+const BOTTOM_NAVIGATION_ITEM_4 = "History";
+const BOTTOM_NAVIGATION_ITEM_5 = "Profile";
