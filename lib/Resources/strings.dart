@@ -25,3 +25,12 @@ const BOTTOM_NAVIGATION_ITEM_2 = "Parked";
 const BOTTOM_NAVIGATION_ITEM_3 = "Pending";
 const BOTTOM_NAVIGATION_ITEM_4 = "History";
 const BOTTOM_NAVIGATION_ITEM_5 = "Profile";
+
+// AppBar titles
+const APPBAR_TITLES = [
+  "Home",
+  "Parked cars",
+  "Pending parking",
+  "Parking history",
+  "Profile"
+];
