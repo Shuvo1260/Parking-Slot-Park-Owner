@@ -34,5 +34,3 @@ const BOTTOM_NAVIGATION_ITEMS = [
     ),
   ),
 ];
-
-const BOTTOM_NAVIGATION_PAGES = [];

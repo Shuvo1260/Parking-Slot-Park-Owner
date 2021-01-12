@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class ParkPage extends StatelessWidget {
+class ParkedPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container();
