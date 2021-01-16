@@ -22,6 +22,12 @@ class _HomePageState extends State<HomePage> {
     return Container(
       child: Center(
         child: Scaffold(
+          body: ListView.builder(
+            itemBuilder: (context, index) {
+              return Card();
+            },
+            itemCount: placeList.length,
+          ),
           floatingActionButton: FloatingActionButton(
             onPressed: () {
               Get.to(

@@ -32,6 +32,8 @@ dependencies:
 
   get: ^3.24.0
 
+  dataclass: ^0.5.0
+
 flutter_icons:
   android: true
   ios: true
@@ -46,6 +48,8 @@ flutter_launcher_name:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+  dataclass_generator: ^0.5.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
