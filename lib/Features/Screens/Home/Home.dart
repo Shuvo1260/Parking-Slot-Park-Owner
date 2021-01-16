@@ -10,7 +10,18 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<PlaceData> placeList;
+  List<PlaceData> placeList = [
+    PlaceData(id: 2, address: "dflskjfds"),
+    PlaceData(id: 2, address: "dflskjfds"),
+    PlaceData(id: 2, address: "dflskjfds"),
+  ];
+
+  @override
+  void initState() {
+    super.initState();
+    placeList.add(PlaceData(id: 2, address: "dflskjfds"));
+    print(placeList.length);
+  }
 
   @override
   void setState(fn) {
@@ -25,7 +36,9 @@ class _HomePageState extends State<HomePage> {
         child: Scaffold(
           body: ListView.builder(
             itemBuilder: (context, index) {
-              return Card();
+              return Card(
+                child: Text(placeList[index].address),
+              );
             },
             itemCount: placeList.length,
           ),
