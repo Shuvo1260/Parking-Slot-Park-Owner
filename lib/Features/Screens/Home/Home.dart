@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:parking_slot_seller/Data/Models/PlacesData.dart';
 import 'package:parking_slot_seller/Features/Screens/Home/AddPlace.dart';
 import 'package:parking_slot_seller/Resources/colors.dart';
 
@@ -9,7 +10,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<Widget> placeList;
+  List<PlaceData> placeList;
 
   @override
   void setState(fn) {
