@@ -5,7 +5,14 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Center(
-        child: Text("Home"),
+        child: Scaffold(
+          floatingActionButton: FloatingActionButton(
+            onPressed: () {
+              //
+            },
+            child: Icon(Icons.add),
+          ),
+        ),
       ),
     );
   }
