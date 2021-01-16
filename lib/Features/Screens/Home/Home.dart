@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:parking_slot_seller/Resources/colors.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -11,6 +12,7 @@ class HomePage extends StatelessWidget {
               //
             },
             child: Icon(Icons.add),
+            backgroundColor: COLOR_CARIBBEAN_GREEN,
           ),
         ),
       ),
