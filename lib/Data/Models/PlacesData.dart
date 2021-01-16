@@ -5,5 +5,5 @@ import 'package:flutter/cupertino.dart';
 class Place {
   var id;
   var address;
-  Place({this.id, @required this.address})
+  Place({this.id, @required this.address});
 }
