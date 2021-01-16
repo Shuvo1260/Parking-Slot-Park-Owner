@@ -3,7 +3,12 @@ import 'package:get/get.dart';
 import 'package:parking_slot_seller/Features/Screens/Home/AddPlace.dart';
 import 'package:parking_slot_seller/Resources/colors.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Container(
