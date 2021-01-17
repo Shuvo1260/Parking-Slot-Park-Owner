@@ -10,10 +10,27 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  var imageUrl =
+      "https://i.pinimg.com/originals/66/d0/86/66d0863ef27e8dc8ab401072a526693f.jpg";
   List<PlaceData> placeList = [
-    PlaceData(id: 2, address: "dflskjfds"),
-    PlaceData(id: 2, address: "dflskjfds"),
-    PlaceData(id: 2, address: "dflskjfds"),
+    PlaceData(
+        id: 2,
+        address: "dflskjfds",
+        imageUrl:
+            "https://i.pinimg.com/originals/66/d0/86/66d0863ef27e8dc8ab401072a526693f.jpg",
+        rate: 20),
+    PlaceData(
+        id: 2,
+        address: "dflskjfds",
+        imageUrl:
+            "https://i.pinimg.com/originals/66/d0/86/66d0863ef27e8dc8ab401072a526693f.jpg",
+        rate: 20),
+    PlaceData(
+        id: 2,
+        address: "dflskjfds",
+        imageUrl:
+            "https://i.pinimg.com/originals/66/d0/86/66d0863ef27e8dc8ab401072a526693f.jpg",
+        rate: 20),
   ];
 
   @override
