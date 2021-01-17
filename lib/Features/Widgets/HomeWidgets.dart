@@ -4,7 +4,7 @@ import 'package:parking_slot_seller/Data/Models/PlacesData.dart';
 class ViewPlaceListItem extends StatelessWidget {
   PlaceData placeData;
 
-  ViewPlaceListItem(this.placeData)
+  ViewPlaceListItem(this.placeData);
 
   @override
   Widget build(BuildContext context) {
@@ -12,9 +12,7 @@ class ViewPlaceListItem extends StatelessWidget {
       padding: EdgeInsets.all(10.0),
       child: Card(
         child: Row(
-          children: [
-            
-          ],
+          children: [],
         ),
       ),
     );

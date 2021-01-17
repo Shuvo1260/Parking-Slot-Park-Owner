@@ -5,5 +5,11 @@ import 'package:flutter/cupertino.dart';
 class PlaceData {
   var id;
   var address;
-  PlaceData({this.id, @required this.address});
+  var imageUrl;
+  var rate;
+  PlaceData(
+      {this.id,
+      @required this.address,
+      @required this.imageUrl,
+      @required this.rate});
 }
