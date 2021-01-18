@@ -16,30 +16,23 @@ class _HomePageState extends State<HomePage> {
   List<PlaceData> placeList = [
     PlaceData(
         id: 2,
-        address: "dflskjfds",
+        address: "Test1",
         imageUrl:
             "https://i.pinimg.com/originals/66/d0/86/66d0863ef27e8dc8ab401072a526693f.jpg",
-        rate: 20),
+        rate: 16),
     PlaceData(
         id: 2,
-        address: "dflskjfds",
+        address: "Test2",
         imageUrl:
             "https://i.pinimg.com/originals/66/d0/86/66d0863ef27e8dc8ab401072a526693f.jpg",
-        rate: 20),
+        rate: 25),
     PlaceData(
         id: 2,
-        address: "dflskjfds",
+        address: "Test3",
         imageUrl:
             "https://i.pinimg.com/originals/66/d0/86/66d0863ef27e8dc8ab401072a526693f.jpg",
-        rate: 20),
+        rate: 5),
   ];
-
-  @override
-  void initState() {
-    super.initState();
-    placeList.add(PlaceData(id: 2, address: "dflskjfds"));
-    print(placeList.length);
-  }
 
   @override
   void setState(fn) {

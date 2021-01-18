@@ -22,7 +22,10 @@ class ViewPlaceListItem extends StatelessWidget {
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                _PlaceListText(placeData.address, fontSize: 20.0,),
+                _PlaceListText(
+                  placeData.address,
+                  fontSize: 20.0,
+                ),
                 SizedBox(
                   height: 10.0,
                 ),
@@ -36,16 +39,18 @@ class ViewPlaceListItem extends StatelessWidget {
   }
 }
 
-
 class _PlaceListText extends StatelessWidget {
   var data;
   var fontSize;
-  _PlaceListText(this.data, {@required this.fontSize})
+  _PlaceListText(this.data, {@required this.fontSize});
   @override
   Widget build(BuildContext context) {
-    return Text(data, style: TextStyle(
-      color: Colors.black,
-      fontSize: fontSize,
-    ),);
+    return Text(
+      data,
+      style: TextStyle(
+        color: Colors.black,
+        fontSize: fontSize,
+      ),
+    );
   }
 }
