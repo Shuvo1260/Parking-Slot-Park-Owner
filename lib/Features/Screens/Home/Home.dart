@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:parking_slot_seller/Data/Models/PlacesData.dart';
 import 'package:parking_slot_seller/Features/Screens/Home/AddPlace.dart';
+import 'package:parking_slot_seller/Features/Widgets/HomeWidgets.dart';
 import 'package:parking_slot_seller/Resources/colors.dart';
 
 class HomePage extends StatefulWidget {
@@ -53,9 +54,7 @@ class _HomePageState extends State<HomePage> {
         child: Scaffold(
           body: ListView.builder(
             itemBuilder: (context, index) {
-              return Card(
-                child: Text(placeList[index].address),
-              );
+              return ViewPlaceListItem(placeList[index]);
             },
             itemCount: placeList.length,
           ),
