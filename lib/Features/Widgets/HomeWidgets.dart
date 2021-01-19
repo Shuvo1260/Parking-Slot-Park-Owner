@@ -12,7 +12,6 @@ class ViewPlaceListItem extends StatelessWidget {
       padding: EdgeInsets.all(10.0),
       child: Card(
         child: Row(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Image.network(
               placeData.imageUrl,
