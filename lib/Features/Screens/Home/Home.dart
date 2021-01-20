@@ -49,6 +49,7 @@ class _HomePageState extends State<HomePage> {
           body: ListView.builder(
             itemBuilder: (context, index) {
               return FlatButton(
+                padding: EdgeInsets.all(0.0),
                 child: ViewPlaceListItem(placeList[index]),
                 onPressed: () {
                   print(index);
