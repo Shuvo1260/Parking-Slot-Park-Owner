@@ -16,7 +16,8 @@ class _HomePageState extends State<HomePage> {
   List<PlaceData> placeList = [
     PlaceData(
         id: 2,
-        address: "Test1",
+        address:
+            "Testfdsajsalfdkjfalskjdlfaskjlkdfsajlkasfdjlkjfadslkjfdaslkjfdsalkjfdsalkjfdsakljlskdfajas1",
         imageUrl:
             "https://i.pinimg.com/originals/66/d0/86/66d0863ef27e8dc8ab401072a526693f.jpg",
         rate: 16),

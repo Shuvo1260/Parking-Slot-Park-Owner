@@ -41,19 +41,23 @@ class ViewPlaceListItem extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            Container(
+            SizedBox(
+              width: 5.0,
+            ),
+            Flexible(
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   _PlaceListText(
                     placeData.address,
-                    fontSize: 20.0,
+                    fontSize: 16.0,
                   ),
                   SizedBox(
                     height: 10.0,
                   ),
                   _PlaceListText(
                     SIGN_TAKA + placeData.rate.toString(),
-                    fontSize: 16.0,
+                    fontSize: 12.0,
                   ),
                 ],
               ),
