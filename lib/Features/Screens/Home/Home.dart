@@ -48,7 +48,12 @@ class _HomePageState extends State<HomePage> {
         child: Scaffold(
           body: ListView.builder(
             itemBuilder: (context, index) {
-              return ViewPlaceListItem(placeList[index]);
+              return FlatButton(
+                child: ViewPlaceListItem(placeList[index]),
+                onPressed: () {
+                  print(index);
+                },
+              );
             },
             itemCount: placeList.length,
           ),
