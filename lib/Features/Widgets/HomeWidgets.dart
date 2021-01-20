@@ -20,7 +20,11 @@ class ViewPlaceListItem extends StatelessWidget {
         ),
         child: Row(
           children: [
-            ClipOval(
+            ClipRRect(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(RADIUS_LIST_ITEM),
+                bottomLeft: Radius.circular(RADIUS_LIST_ITEM),
+              ),
               child: Image.network(
                 placeData.imageUrl,
                 height: HEIGHT_PARKING_LIST_ITEM_IMAGE,
