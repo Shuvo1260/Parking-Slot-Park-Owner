@@ -34,3 +34,6 @@ const APPBAR_TITLES = [
   "Parking history",
   "Profile"
 ];
+
+// Normal strings
+const SIGN_TAKA = "৳";
