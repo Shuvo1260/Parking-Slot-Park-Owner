@@ -17,6 +17,14 @@ class ViewPlaceListItem extends StatelessWidget {
           borderRadius: BorderRadius.all(
             Radius.circular(RADIUS_LIST_ITEM),
           ),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.5),
+              spreadRadius: 1,
+              blurRadius: 5,
+              offset: Offset(0, 2),
+            ),
+          ],
         ),
         child: Row(
           children: [
