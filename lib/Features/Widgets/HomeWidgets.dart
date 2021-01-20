@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:parking_slot_seller/Data/Models/PlacesData.dart';
+import 'package:parking_slot_seller/Resources/values.dart';
 
 class ViewPlaceListItem extends StatelessWidget {
   PlaceData placeData;
@@ -15,8 +16,8 @@ class ViewPlaceListItem extends StatelessWidget {
           children: [
             Image.network(
               placeData.imageUrl,
-              height: 100.0,
-              width: 100.0,
+              height: HEIGHT_PARKING_LIST_ITEM_IMAGE,
+              width: WIDTH_PARKING_LIST_ITEM_IMAGE,
               fit: BoxFit.cover,
             ),
             // Container(
