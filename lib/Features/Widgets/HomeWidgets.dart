@@ -41,25 +41,25 @@ class ViewPlaceListItem extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            SizedBox(
-              width: 5.0,
-            ),
             Flexible(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  _PlaceListText(
-                    placeData.address,
-                    fontSize: 16.0,
-                  ),
-                  SizedBox(
-                    height: 10.0,
-                  ),
-                  _PlaceListText(
-                    SIGN_TAKA + placeData.rate.toString(),
-                    fontSize: 12.0,
-                  ),
-                ],
+              child: Padding(
+                padding: EdgeInsets.all(5.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    _PlaceListText(
+                      placeData.address,
+                      fontSize: 16.0,
+                    ),
+                    SizedBox(
+                      height: 10.0,
+                    ),
+                    _PlaceListText(
+                      SIGN_TAKA + placeData.rate.toString(),
+                      fontSize: 12.0,
+                    ),
+                  ],
+                ),
               ),
             )
           ],
@@ -81,6 +81,8 @@ class _PlaceListText extends StatelessWidget {
         color: Colors.black,
         fontSize: fontSize,
       ),
+      maxLines: 2,
+      overflow: TextOverflow.ellipsis,
     );
   }
 }
