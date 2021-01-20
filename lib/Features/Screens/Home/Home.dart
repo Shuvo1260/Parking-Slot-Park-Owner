@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:parking_slot_seller/Data/Models/PlacesData.dart';
 import 'package:parking_slot_seller/Features/Screens/Home/AddPlace.dart';
+import 'package:parking_slot_seller/Features/Screens/Home/ViewPlace.dart';
 import 'package:parking_slot_seller/Features/Widgets/HomeWidgets.dart';
 import 'package:parking_slot_seller/Resources/colors.dart';
 
@@ -53,6 +54,7 @@ class _HomePageState extends State<HomePage> {
                 child: ViewPlaceListItem(placeList[index]),
                 onPressed: () {
                   print(index);
+                  Get.to(ViewPlace(), arguments: placeList[index]);
                 },
               );
             },
