@@ -12,13 +12,21 @@ class ViewPlaceListItem extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.all(10.0),
       child: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.all(
+            Radius.circular(RADIUS_LIST_ITEM),
+          ),
+        ),
         child: Row(
           children: [
-            Image.network(
-              placeData.imageUrl,
-              height: HEIGHT_PARKING_LIST_ITEM_IMAGE,
-              width: WIDTH_PARKING_LIST_ITEM_IMAGE,
-              fit: BoxFit.cover,
+            ClipOval(
+              child: Image.network(
+                placeData.imageUrl,
+                height: HEIGHT_PARKING_LIST_ITEM_IMAGE,
+                width: WIDTH_PARKING_LIST_ITEM_IMAGE,
+                fit: BoxFit.cover,
+              ),
             ),
             // Container(
             //   child: Column(
