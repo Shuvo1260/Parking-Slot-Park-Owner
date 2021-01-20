@@ -56,14 +56,14 @@ class _ListItemFields extends StatelessWidget {
           children: [
             _PlaceListText(
               placeData.address,
-              fontSize: 16.0,
+              fontSize: FONT_SIZE_LIST_ITEM_ADDRESS,
             ),
             SizedBox(
               height: 10.0,
             ),
             _PlaceListText(
               SIGN_TAKA + placeData.rate.toString(),
-              fontSize: 12.0,
+              fontSize: FONT_SIZE_LIST_ITEM_RATE,
             ),
           ],
         ),
