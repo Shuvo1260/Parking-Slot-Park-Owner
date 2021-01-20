@@ -10,27 +10,29 @@ class ViewPlaceListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.all(10.0),
-      child: Card(
+      child: Container(
         child: Row(
           children: [
             Image.network(
               placeData.imageUrl,
-              height: 80.0,
-              width: 80.0,
+              height: 100.0,
+              width: 100.0,
+              fit: BoxFit.cover,
             ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                _PlaceListText(
-                  placeData.address,
-                  fontSize: 20.0,
-                ),
-                SizedBox(
-                  height: 10.0,
-                ),
-                _PlaceListText(placeData.rate, fontSize: 16.0),
-              ],
-            )
+            // Container(
+            //   child: Column(
+            //     children: [
+            //       _PlaceListText(
+            //         placeData.address,
+            //         fontSize: 20.0,
+            //       ),
+            //       SizedBox(
+            //         height: 10.0,
+            //       ),
+            //       _PlaceListText(placeData.rate, fontSize: 16.0),
+            //     ],
+            //   ),
+            // )
           ],
         ),
       ),
