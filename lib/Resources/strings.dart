@@ -35,5 +35,7 @@ const APPBAR_TITLES = [
   "Profile"
 ];
 
+const APPBAR_PLACE = "Place";
+
 // Normal strings
 const SIGN_TAKA = "৳";

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:parking_slot_seller/Data/Models/PlacesData.dart';
+import 'package:parking_slot_seller/Resources/colors.dart';
+import 'package:parking_slot_seller/Resources/strings.dart';
 
 class ViewPlace extends StatefulWidget {
   @override
@@ -18,6 +20,11 @@ class _ViewPlaceState extends State<ViewPlace> {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(APPBAR_PLACE),
+        backgroundColor: COLOR_CARIBBEAN_GREEN,
+      ),
+    );
   }
 }
