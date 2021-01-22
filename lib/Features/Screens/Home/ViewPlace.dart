@@ -25,6 +25,11 @@ class _ViewPlaceState extends State<ViewPlace> {
         title: Text(APPBAR_PLACE),
         backgroundColor: COLOR_CARIBBEAN_GREEN,
       ),
+      body: Container(
+        child: Row(
+          children: [],
+        ),
+      ),
     );
   }
 }
