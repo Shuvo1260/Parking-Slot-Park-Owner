@@ -27,7 +27,9 @@ class _ViewPlaceState extends State<ViewPlace> {
       ),
       body: Container(
         child: Row(
-          children: [],
+          children: [
+            Card(),
+          ],
         ),
       ),
     );
