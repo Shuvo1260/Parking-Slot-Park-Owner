@@ -26,14 +26,19 @@ class _ViewPlaceState extends State<ViewPlace> {
         title: Text(APPBAR_PLACE),
         backgroundColor: COLOR_CARIBBEAN_GREEN,
       ),
-      body: Container(
-        child: SingleChildScrollView(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+      body: SingleChildScrollView(
+        child: Container(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Expanded(
-                child: ViewPlaceImage(placeData: _placeData),
-              ),
+              ViewPlaceImage(placeData: _placeData),
+              // SizedBox(
+              //   height: 10.0,
+              // ),
+              // Expanded(
+              //   child: Container(),
+              // ),
             ],
           ),
         ),
