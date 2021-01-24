@@ -27,39 +27,41 @@ class _ViewPlaceState extends State<ViewPlace> {
         backgroundColor: COLOR_CARIBBEAN_GREEN,
       ),
       body: Container(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Expanded(
-              child: Container(
-                height: 200.0,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(RADIUS_LIST_ITEM),
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 3,
-                      blurRadius: 7,
-                      offset: Offset(0, 2),
+        child: SingleChildScrollView(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Expanded(
+                child: Container(
+                  height: 200.0,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(RADIUS_LIST_ITEM),
                     ),
-                  ],
-                ),
-                margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(RADIUS_LIST_ITEM),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 3,
+                        blurRadius: 7,
+                        offset: Offset(0, 2),
+                      ),
+                    ],
                   ),
-                  child: Image.network(
-                    _placeData.imageUrl,
-                    fit: BoxFit.cover,
+                  margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(RADIUS_LIST_ITEM),
+                    ),
+                    child: Image.network(
+                      _placeData.imageUrl,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
