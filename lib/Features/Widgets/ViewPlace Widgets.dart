@@ -23,8 +23,8 @@ class ViewPlaceImage extends StatelessWidget {
         boxShadow: [
           BoxShadow(
             color: Colors.grey.withOpacity(0.5),
-            spreadRadius: 3,
-            blurRadius: 7,
+            spreadRadius: 1,
+            blurRadius: 3,
             offset: Offset(0, 2),
           ),
         ],
