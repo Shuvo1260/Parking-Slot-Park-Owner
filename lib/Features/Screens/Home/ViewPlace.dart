@@ -33,12 +33,12 @@ class _ViewPlaceState extends State<ViewPlace> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               ViewPlaceImage(placeData: _placeData),
-              // SizedBox(
-              //   height: 10.0,
-              // ),
-              // Expanded(
-              //   child: Container(),
-              // ),
+              SizedBox(
+                height: 10.0,
+              ),
+              Expanded(
+                child: Container(),
+              ),
             ],
           ),
         ),
