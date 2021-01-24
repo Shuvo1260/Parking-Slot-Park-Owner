@@ -30,30 +30,32 @@ class _ViewPlaceState extends State<ViewPlace> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Container(
-              height: 200.0,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.all(
-                  Radius.circular(RADIUS_LIST_ITEM),
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    spreadRadius: 3,
-                    blurRadius: 7,
-                    offset: Offset(0, 2),
+            Expanded(
+              child: Container(
+                height: 200.0,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(RADIUS_LIST_ITEM),
                   ),
-                ],
-              ),
-              margin: EdgeInsets.symmetric(horizontal: 10.0),
-              child: ClipRRect(
-                borderRadius: BorderRadius.all(
-                  Radius.circular(RADIUS_LIST_ITEM),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      spreadRadius: 3,
+                      blurRadius: 7,
+                      offset: Offset(0, 2),
+                    ),
+                  ],
                 ),
-                child: Image.network(
-                  _placeData.imageUrl,
-                  fit: BoxFit.contain,
+                margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(RADIUS_LIST_ITEM),
+                  ),
+                  child: Image.network(
+                    _placeData.imageUrl,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),
