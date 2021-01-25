@@ -149,7 +149,7 @@ class ViewPlaceSlotWidget extends StatelessWidget {
           ),
         ],
       ),
-      margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
+      margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 15.0),
       padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
