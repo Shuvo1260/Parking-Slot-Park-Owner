@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:parking_slot_seller/Data/Models/PlacesData.dart';
-import 'package:parking_slot_seller/Features/Widgets/ViewPlace%20Widgets.dart';
+import 'package:parking_slot_seller/Features/Widgets/ViewPlaceWidgets.dart';
 import 'package:parking_slot_seller/Resources/colors.dart';
 import 'package:parking_slot_seller/Resources/strings.dart';
 
@@ -36,9 +36,7 @@ class _ViewPlaceState extends State<ViewPlace> {
               SizedBox(
                 height: 10.0,
               ),
-              Expanded(
-                child: Container(),
-              ),
+              ViewPlaceDetails(placeData: _placeData),
             ],
           ),
         ),

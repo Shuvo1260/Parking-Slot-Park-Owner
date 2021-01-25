@@ -7,9 +7,11 @@ class PlaceData {
   var address;
   var imageUrl;
   var rate;
+  var phoneNumber;
   PlaceData(
       {this.id,
       @required this.address,
       @required this.imageUrl,
-      @required this.rate});
+      @required this.rate,
+      @required this.phoneNumber});
 }
