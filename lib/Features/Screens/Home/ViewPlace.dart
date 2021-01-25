@@ -32,6 +32,16 @@ class _ViewPlaceState extends State<ViewPlace> {
           ),
         ),
         backgroundColor: COLOR_CARIBBEAN_GREEN,
+        actions: [
+          IconButton(
+            icon: Icon(Icons.edit),
+            onPressed: () {},
+          ),
+          IconButton(
+            icon: Icon(Icons.delete),
+            onPressed: () {},
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Container(
