@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:parking_slot_seller/Data/Models/PlacesData.dart';
 import 'package:parking_slot_seller/Resources/colors.dart';
+import 'package:parking_slot_seller/Resources/strings.dart';
 import 'package:parking_slot_seller/Resources/values.dart';
 
 class ViewPlaceImage extends StatelessWidget {
@@ -80,7 +81,13 @@ class ViewPlaceDetails extends StatelessWidget {
           SizedBox(
             height: 10.0,
           ),
-          _DetailsTextWidget(data: _placeData.address, icon: Icons.location_on)
+          _DetailsTextWidget(data: _placeData.address, icon: Icons.location_on),
+          SizedBox(
+            height: 10.0,
+          ),
+          _DetailsTextWidget(
+              data: "${_placeData.rate} $SIGN_TAKA per hour",
+              icon: Icons.attach_money),
         ],
       ),
     );
