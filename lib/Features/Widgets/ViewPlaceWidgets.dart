@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:parking_slot_seller/Data/Models/PlacesData.dart';
+import 'package:parking_slot_seller/Resources/colors.dart';
 import 'package:parking_slot_seller/Resources/values.dart';
 
 class ViewPlaceImage extends StatelessWidget {
@@ -73,23 +74,35 @@ class ViewPlaceDetails extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
       child: Column(
         children: [
-          Row(
-            children: [
-              Icon(Icons.phone),
-              SizedBox(
-                width: 10.0,
-              ),
-              Text(
-                _placeData.phoneNumber,
-                style: TextStyle(
-                  color: COLOR_BLACK,
-                  fontSize: 14.0,
-                ),
-              ),
-            ],
-          )
+          _DetailsTextWidget(icon: Icons.phone, data: _placeData.phoneNumber)
         ],
       ),
+    );
+  }
+}
+
+class _DetailsTextWidget extends StatelessWidget {
+  _DetailsTextWidget({@required this.data, @required this.icon});
+
+  String data;
+  var icon;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Icon(icon),
+        SizedBox(
+          width: 10.0,
+        ),
+        Text(
+          data,
+          style: TextStyle(
+            color: COLOR_BLACK,
+            fontSize: 14.0,
+          ),
+        ),
+      ],
     );
   }
 }
