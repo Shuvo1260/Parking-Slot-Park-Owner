@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:parking_slot_seller/Data/Models/PlacesData.dart';
 import 'package:parking_slot_seller/Features/Widgets/ViewPlaceWidgets.dart';
+import 'package:parking_slot_seller/Resources/assets.dart';
 import 'package:parking_slot_seller/Resources/colors.dart';
 import 'package:parking_slot_seller/Resources/strings.dart';
 
@@ -23,7 +24,13 @@ class _ViewPlaceState extends State<ViewPlace> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(APPBAR_PLACE),
+        title: Text(
+          APPBAR_PLACE,
+          style: TextStyle(
+            fontFamily: FONT_BANK_GOTHIC,
+            fontSize: 20.0,
+          ),
+        ),
         backgroundColor: COLOR_CARIBBEAN_GREEN,
       ),
       body: SingleChildScrollView(
