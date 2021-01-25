@@ -3,6 +3,7 @@ import 'package:parking_slot_seller/Features/Screens/History/History.dart';
 import 'package:parking_slot_seller/Features/Screens/Parked/Parked.dart';
 import 'package:parking_slot_seller/Features/Screens/Pending/Pending.dart';
 import 'package:parking_slot_seller/Features/Screens/Profile/Profile.dart';
+import 'package:parking_slot_seller/Resources/assets.dart';
 import 'package:parking_slot_seller/Resources/colors.dart';
 import 'package:parking_slot_seller/Resources/strings.dart';
 import 'package:parking_slot_seller/Utils/Utils.dart';
@@ -35,7 +36,13 @@ class _MainActivityState extends State<MainActivity> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(APPBAR_TITLES[_navIndex]),
+        title: Text(
+          APPBAR_TITLES[_navIndex],
+          style: TextStyle(
+            fontFamily: FONT_BANK_GOTHIC,
+            fontSize: 20.0,
+          ),
+        ),
         backgroundColor: COLOR_CARIBBEAN_GREEN,
       ),
       body: SafeArea(
