@@ -193,6 +193,13 @@ class _SlotWidgets extends StatelessWidget {
           title: "Total Slot",
           slot: _placeData.totalSlot.toString(),
         ),
+        SizedBox(
+          width: 10.0,
+        ),
+        _SlotWidget(
+          title: "Parked Slot",
+          slot: _placeData.parkedSlot.toString(),
+        ),
       ],
     );
   }
