@@ -73,8 +73,14 @@ class ViewPlaceDetails extends StatelessWidget {
       margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
       padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          _DetailsTextWidget(icon: Icons.phone, data: _placeData.phoneNumber)
+          _DetailsTextWidget(icon: Icons.phone, data: _placeData.phoneNumber),
+          SizedBox(
+            height: 10.0,
+          ),
+          _DetailsTextWidget(data: _placeData.address, icon: Icons.location_on)
         ],
       ),
     );
@@ -95,11 +101,13 @@ class _DetailsTextWidget extends StatelessWidget {
         SizedBox(
           width: 10.0,
         ),
-        Text(
-          data,
-          style: TextStyle(
-            color: COLOR_BLACK,
-            fontSize: 14.0,
+        Expanded(
+          child: Text(
+            data,
+            style: TextStyle(
+              color: COLOR_BLACK,
+              fontSize: 14.0,
+            ),
           ),
         ),
       ],
