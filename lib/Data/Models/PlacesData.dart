@@ -8,10 +8,15 @@ class PlaceData {
   var imageUrl;
   var rate;
   var phoneNumber;
-  PlaceData(
-      {this.id,
-      @required this.address,
-      @required this.imageUrl,
-      @required this.rate,
-      @required this.phoneNumber});
+  var totalSlot;
+  var parkedSlot;
+  PlaceData({
+    this.id,
+    @required this.address,
+    @required this.imageUrl,
+    @required this.rate,
+    @required this.phoneNumber,
+    @required this.totalSlot,
+    @required this.parkedSlot,
+  });
 }
