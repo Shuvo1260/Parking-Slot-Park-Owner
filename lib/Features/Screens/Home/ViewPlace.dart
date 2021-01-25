@@ -59,7 +59,7 @@ class _ViewPlaceState extends State<ViewPlace> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    Text("Slot details"),
+                    Center(child: Text("Slot details")),
                     Row(
                       children: [],
                     ),
