@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:parking_slot_seller/Data/Models/PlacesData.dart';
 import 'package:parking_slot_seller/Features/Widgets/ViewPlaceWidgets.dart';
+import 'package:parking_slot_seller/Resources/assets.dart';
 import 'package:parking_slot_seller/Resources/colors.dart';
 import 'package:parking_slot_seller/Resources/strings.dart';
 import 'package:parking_slot_seller/Resources/values.dart';
@@ -59,7 +60,17 @@ class _ViewPlaceState extends State<ViewPlace> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    Center(child: Text("Slot details")),
+                    Center(
+                      child: Text(
+                        "Slot details",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18.0,
+                          color: COLOR_CARIBBEAN_GREEN,
+                          fontFamily: FONT_BANK_GOTHIC,
+                        ),
+                      ),
+                    ),
                     Row(
                       children: [],
                     ),
