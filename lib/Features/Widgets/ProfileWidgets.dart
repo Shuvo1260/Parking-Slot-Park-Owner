@@ -35,32 +35,62 @@ class UserNameImageWidget extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Container(
-            height: 80.0,
-            width: 80.0,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              image: DecorationImage(
-                image: NetworkImage(_userData.imageUrl),
-                fit: BoxFit.fill,
-              ),
-            ),
-          ),
-          Expanded(
-            child: Padding(
-              padding: EdgeInsets.all(10.0),
-              child: Text(
-                _userData.name,
-                style: TextStyle(
-                  color: COLOR_CARIBBEAN_GREEN,
-                  fontFamily: FONT_BANK_GOTHIC,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18.0,
-                ),
-              ),
-            ),
-          ),
+          _ProfileImage(userData: _userData),
+          _ProfileUserName(userData: _userData),
         ],
+      ),
+    );
+  }
+}
+
+class _ProfileUserName extends StatelessWidget {
+  const _ProfileUserName({
+    Key key,
+    @required UserData userData,
+  })  : _userData = userData,
+        super(key: key);
+
+  final UserData _userData;
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: Padding(
+        padding: EdgeInsets.all(10.0),
+        child: Text(
+          _userData.name,
+          style: TextStyle(
+            color: COLOR_CARIBBEAN_GREEN,
+            fontFamily: FONT_BANK_GOTHIC,
+            fontWeight: FontWeight.bold,
+            fontSize: 18.0,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _ProfileImage extends StatelessWidget {
+  const _ProfileImage({
+    Key key,
+    @required UserData userData,
+  })  : _userData = userData,
+        super(key: key);
+
+  final UserData _userData;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 80.0,
+      width: 80.0,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        image: DecorationImage(
+          image: NetworkImage(_userData.imageUrl),
+          fit: BoxFit.fill,
+        ),
       ),
     );
   }
