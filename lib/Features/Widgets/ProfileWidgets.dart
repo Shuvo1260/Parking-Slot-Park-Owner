@@ -33,7 +33,7 @@ class UserNameImageWidget extends StatelessWidget {
         ],
       ),
       padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
-      margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
+      margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -152,6 +152,23 @@ class SignOutWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.all(
+          Radius.circular(RADIUS_LIST_ITEM),
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.5),
+            spreadRadius: 1,
+            blurRadius: 3,
+            offset: Offset(0, 2),
+          ),
+        ],
+      ),
+      margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
+      padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
+    );
   }
 }

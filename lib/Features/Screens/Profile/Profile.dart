@@ -31,7 +31,11 @@ class _ProfileState extends State<Profile> {
         children: [
           UserNameImageWidget(userData: _userData),
           UserDetailsWidget(userData: _userData),
-          SignOutWidget()
+          Spacer(),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: SignOutWidget(),
+          )
         ],
       ),
     );
