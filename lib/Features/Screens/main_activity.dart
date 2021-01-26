@@ -6,6 +6,7 @@ import 'package:parking_slot_seller/Features/Screens/Profile/Profile.dart';
 import 'package:parking_slot_seller/Resources/assets.dart';
 import 'package:parking_slot_seller/Resources/colors.dart';
 import 'package:parking_slot_seller/Resources/strings.dart';
+import 'package:parking_slot_seller/Resources/values.dart';
 import 'package:parking_slot_seller/Utils/Utils.dart';
 
 import 'Home/Home.dart';
@@ -40,7 +41,7 @@ class _MainActivityState extends State<MainActivity> {
           APPBAR_TITLES[_navIndex],
           style: TextStyle(
             fontFamily: FONT_BANK_GOTHIC,
-            fontSize: 20.0,
+            fontSize: FONT_SIZE_APPBAR,
           ),
         ),
         backgroundColor: COLOR_CARIBBEAN_GREEN,

@@ -5,6 +5,7 @@ import 'package:parking_slot_seller/Features/Widgets/ViewPlaceWidgets.dart';
 import 'package:parking_slot_seller/Resources/assets.dart';
 import 'package:parking_slot_seller/Resources/colors.dart';
 import 'package:parking_slot_seller/Resources/strings.dart';
+import 'package:parking_slot_seller/Resources/values.dart';
 
 class ViewPlace extends StatefulWidget {
   @override
@@ -28,7 +29,7 @@ class _ViewPlaceState extends State<ViewPlace> {
           APPBAR_PLACE,
           style: TextStyle(
             fontFamily: FONT_BANK_GOTHIC,
-            fontSize: 20.0,
+            fontSize: FONT_SIZE_APPBAR,
           ),
         ),
         backgroundColor: COLOR_CARIBBEAN_GREEN,

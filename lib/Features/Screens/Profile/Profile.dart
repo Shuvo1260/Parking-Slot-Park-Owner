@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:parking_slot_seller/Data/Models/UserData.dart';
+import 'package:parking_slot_seller/Features/Widgets/ProfileWidgets.dart';
 
 class Profile extends StatefulWidget {
   @override
