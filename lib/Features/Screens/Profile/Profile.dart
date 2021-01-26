@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:parking_slot_seller/Data/Models/UserData.dart';
+import 'package:parking_slot_seller/Resources/assets.dart';
+import 'package:parking_slot_seller/Resources/colors.dart';
 import 'package:parking_slot_seller/Resources/values.dart';
 
 class Profile extends StatefulWidget {
@@ -15,11 +17,13 @@ class _ProfileState extends State<Profile> {
     super.initState();
     _userData = UserData(
         id: 1,
-        name: "Name",
+        name: "The name of place owner",
         phoneNumber: "0164578942",
         address: "Dhaka",
         email: "email@email.com",
-        password: "test");
+        password: "test",
+        imageUrl:
+            "https://img.freepik.com/free-photo/handsome-young-businessman-shirt-eyeglasses_85574-6228.jpg?size=626&ext=jpg");
   }
 
   @override
@@ -57,9 +61,21 @@ class _ProfileState extends State<Profile> {
                     fit: BoxFit.fill,
                   ),
                 ),
-              )
-
-              // Text("Name")
+              ),
+              Expanded(
+                child: Padding(
+                  padding: EdgeInsets.all(10.0),
+                  child: Text(
+                    _userData.name,
+                    style: TextStyle(
+                      color: COLOR_CARIBBEAN_GREEN,
+                      fontFamily: FONT_BANK_GOTHIC,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18.0,
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
