@@ -78,15 +78,15 @@ class ViewPlaceDetails extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          _DetailsTextWidget(icon: Icons.phone, data: _placeData.phoneNumber),
+          DetailsTextWidget(icon: Icons.phone, data: _placeData.phoneNumber),
           SizedBox(
             height: 10.0,
           ),
-          _DetailsTextWidget(data: _placeData.address, icon: Icons.location_on),
+          DetailsTextWidget(data: _placeData.address, icon: Icons.location_on),
           SizedBox(
             height: 10.0,
           ),
-          _DetailsTextWidget(
+          DetailsTextWidget(
               data: "${_placeData.rate} $SIGN_TAKA per hour",
               icon: Icons.attach_money),
         ],
@@ -95,8 +95,8 @@ class ViewPlaceDetails extends StatelessWidget {
   }
 }
 
-class _DetailsTextWidget extends StatelessWidget {
-  _DetailsTextWidget({@required this.data, @required this.icon});
+class DetailsTextWidget extends StatelessWidget {
+  DetailsTextWidget({@required this.data, @required this.icon});
 
   String data;
   var icon;

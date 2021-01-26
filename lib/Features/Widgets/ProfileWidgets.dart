@@ -4,6 +4,8 @@ import 'package:parking_slot_seller/Resources/assets.dart';
 import 'package:parking_slot_seller/Resources/colors.dart';
 import 'package:parking_slot_seller/Resources/values.dart';
 
+import 'ViewPlaceWidgets.dart';
+
 class UserNameImageWidget extends StatelessWidget {
   const UserNameImageWidget({
     Key key,
@@ -91,6 +93,53 @@ class _ProfileImage extends StatelessWidget {
           image: NetworkImage(_userData.imageUrl),
           fit: BoxFit.fill,
         ),
+      ),
+    );
+  }
+}
+
+class UserDetailsWidget extends StatelessWidget {
+  const UserDetailsWidget({
+    Key key,
+    @required UserData userData,
+  })  : _userData = userData,
+        super(key: key);
+
+  final UserData _userData;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.all(
+          Radius.circular(RADIUS_LIST_ITEM),
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.5),
+            spreadRadius: 1,
+            blurRadius: 3,
+            offset: Offset(0, 2),
+          ),
+        ],
+      ),
+      margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
+      padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          DetailsTextWidget(icon: Icons.phone, data: _userData.phoneNumber),
+          SizedBox(
+            height: 10.0,
+          ),
+          DetailsTextWidget(data: _userData.address, icon: Icons.location_on),
+          SizedBox(
+            height: 10.0,
+          ),
+          DetailsTextWidget(data: _userData.email, icon: Icons.email),
+        ],
       ),
     );
   }

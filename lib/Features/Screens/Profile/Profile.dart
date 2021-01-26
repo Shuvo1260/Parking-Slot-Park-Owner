@@ -27,10 +27,12 @@ class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        child: Column(
-      children: [
-        UserNameImageWidget(userData: _userData),
-      ],
-    ));
+      child: Column(
+        children: [
+          UserNameImageWidget(userData: _userData),
+          UserDetailsWidget(userData: _userData),
+        ],
+      ),
+    );
   }
 }
