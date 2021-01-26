@@ -187,7 +187,6 @@ class SignOutWidget extends StatelessWidget {
               ),
             ),
           ),
-          Icon(Icons.arrow_right_sharp),
         ],
       ),
     );
