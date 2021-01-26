@@ -144,3 +144,14 @@ class UserDetailsWidget extends StatelessWidget {
     );
   }
 }
+
+class SignOutWidget extends StatelessWidget {
+  const SignOutWidget({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
