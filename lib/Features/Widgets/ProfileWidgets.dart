@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:parking_slot_seller/Data/Models/UserData.dart';
 import 'package:parking_slot_seller/Resources/assets.dart';
 import 'package:parking_slot_seller/Resources/colors.dart';
+import 'package:parking_slot_seller/Resources/strings.dart';
 import 'package:parking_slot_seller/Resources/values.dart';
 
 import 'ViewPlaceWidgets.dart';
@@ -167,8 +168,28 @@ class SignOutWidget extends StatelessWidget {
           ),
         ],
       ),
-      margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
+      margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
       padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
+      child: Row(
+        children: [
+          Icon(Icons.exit_to_app),
+          SizedBox(
+            width: 10.0,
+          ),
+          Expanded(
+            flex: 2,
+            child: Text(
+              SIGN_OUT,
+              style: TextStyle(
+                color: COLOR_CARIBBEAN_GREEN,
+                fontSize: FONT_SIZE_SIGN_OUT,
+                fontFamily: FONT_BANK_GOTHIC,
+              ),
+            ),
+          ),
+          Icon(Icons.arrow_right_sharp),
+        ],
+      ),
     );
   }
 }
