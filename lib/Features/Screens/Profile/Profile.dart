@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:parking_slot_seller/Resources/values.dart';
 
-class Profile extends StatelessWidget {
+class Profile extends StatefulWidget {
+  @override
+  _ProfileState createState() => _ProfileState();
+}
+
+class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -40,6 +45,8 @@ class Profile extends StatelessWidget {
                   ),
                 ),
               )
+
+              // Text("Name")
             ],
           ),
         ),
