@@ -37,5 +37,10 @@ const APPBAR_TITLES = [
 
 const APPBAR_PLACE = "Place";
 
+// Titles
+const TITLE_SLOT_DETAILS = "Slot details";
+const TITLE_TOTAL_SLOT = "Total slots";
+const TITLE_PARKED_SLOT = "Parked slots";
+
 // Normal strings
 const SIGN_TAKA = "৳";

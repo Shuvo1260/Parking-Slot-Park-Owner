@@ -157,7 +157,7 @@ class ViewPlaceSlotWidget extends StatelessWidget {
         children: [
           Center(
             child: Text(
-              "Slot details",
+              TITLE_SLOT_DETAILS,
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: FONT_SIZE_VIEW_PLACE_SLOT_TITLE,
@@ -190,14 +190,14 @@ class _SlotWidgets extends StatelessWidget {
     return Row(
       children: [
         _SlotWidget(
-          title: "Total Slot",
+          title: TITLE_TOTAL_SLOT,
           slot: _placeData.totalSlot.toString(),
         ),
         SizedBox(
           width: 10.0,
         ),
         _SlotWidget(
-          title: "Parked Slot",
+          title: TITLE_PARKED_SLOT,
           slot: _placeData.parkedSlot.toString(),
         ),
       ],
