@@ -114,7 +114,7 @@ class _DetailsTextWidget extends StatelessWidget {
             data,
             style: TextStyle(
               color: COLOR_BLACK,
-              fontSize: 14.0,
+              fontSize: FONT_SIZE_VIEW_PLACE_DETAILS,
             ),
           ),
         ),
@@ -160,7 +160,7 @@ class ViewPlaceSlotWidget extends StatelessWidget {
               "Slot details",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 18.0,
+                fontSize: FONT_SIZE_VIEW_PLACE_SLOT_TITLE,
                 color: COLOR_CARIBBEAN_GREEN,
                 fontFamily: FONT_BANK_GOTHIC,
               ),
