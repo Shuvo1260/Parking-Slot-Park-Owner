@@ -169,25 +169,28 @@ class SignOutWidget extends StatelessWidget {
         ],
       ),
       margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
-      padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
-      child: Row(
-        children: [
-          Icon(Icons.exit_to_app),
-          SizedBox(
-            width: 10.0,
-          ),
-          Expanded(
-            flex: 2,
-            child: Text(
-              SIGN_OUT,
-              style: TextStyle(
-                color: COLOR_CARIBBEAN_GREEN,
-                fontSize: FONT_SIZE_SIGN_OUT,
-                fontFamily: FONT_BANK_GOTHIC,
+      child: FlatButton(
+        padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
+        onPressed: () {},
+        child: Row(
+          children: [
+            Icon(Icons.exit_to_app),
+            SizedBox(
+              width: 10.0,
+            ),
+            Expanded(
+              flex: 2,
+              child: Text(
+                SIGN_OUT,
+                style: TextStyle(
+                  color: COLOR_CARIBBEAN_GREEN,
+                  fontSize: FONT_SIZE_SIGN_OUT,
+                  fontFamily: FONT_BANK_GOTHIC,
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
