@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:parking_slot_seller/Data/Models/UserData.dart';
 import 'package:parking_slot_seller/Resources/values.dart';
 
 class Profile extends StatefulWidget {
@@ -7,6 +8,20 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
+  UserData _userData;
+
+  @override
+  void initState() {
+    super.initState();
+    _userData = UserData(
+        id: 1,
+        name: "Name",
+        phoneNumber: "0164578942",
+        address: "Dhaka",
+        email: "email@email.com",
+        password: "test");
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -38,9 +53,7 @@ class _ProfileState extends State<Profile> {
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   image: DecorationImage(
-                    image: NetworkImage(
-                      "https://img.freepik.com/free-photo/handsome-young-businessman-shirt-eyeglasses_85574-6228.jpg?size=626&ext=jpg",
-                    ),
+                    image: NetworkImage(_userData.imageUrl),
                     fit: BoxFit.fill,
                   ),
                 ),

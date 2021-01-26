@@ -9,6 +9,7 @@ class UserData {
   var address;
   var email;
   var password;
+  var imageUrl;
 
   UserData(
       {@required this.id,
@@ -16,5 +17,6 @@ class UserData {
       @required this.phoneNumber,
       @required this.address,
       @required this.email,
-      @required this.password});
+      @required this.password,
+      @required this.imageUrl});
 }
