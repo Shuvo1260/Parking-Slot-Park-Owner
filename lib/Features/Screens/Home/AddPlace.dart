@@ -27,7 +27,7 @@ class _AddPlaceState extends State<AddPlace> {
         ),
         body: SafeArea(
           child: Container(
-            padding: EdgeInsets.all(10.0),
+            padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 20.0),
             child: SingleChildScrollView(
               child: Column(
                 children: [
