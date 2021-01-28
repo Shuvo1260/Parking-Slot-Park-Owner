@@ -8,9 +8,10 @@ class AddPlaceTextField extends StatelessWidget {
   var hint;
   var keyboardType;
   var obscure;
+  var icon;
 
   AddPlaceTextField(this.onTextChange,
-      {this.hint, this.keyboardType, @required this.obscure});
+      {this.hint, this.keyboardType, @required this.obscure, this.icon});
 
   @override
   Widget build(BuildContext context) {
@@ -34,28 +35,38 @@ class AddPlaceTextField extends StatelessWidget {
           horizontal: PADDING_HORIZONTAL_LOGIN_FIELDS,
           vertical: PADDING_VERTICAL_LOGIN_FIELDS,
         ),
-        child: TextField(
-          obscureText: obscure,
-          decoration: InputDecoration(
-            hintText: hint,
-            enabledBorder: InputBorder.none,
-            focusedBorder: InputBorder.none,
-            errorBorder: InputBorder.none,
-            disabledBorder: InputBorder.none,
-            hintStyle: TextStyle(
-              color: COLOR_SHAMROCK,
-              fontFamily: FONT_BANK_GOTHIC,
+        child: Row(
+          children: [
+            Icon(
+              icon,
+              color: COLOR_CARIBBEAN_GREEN,
             ),
-          ),
-          onChanged: (value) {
-            onTextChange(value);
-          },
-          style: TextStyle(
-            color: COLOR_CARIBBEAN_GREEN,
-            fontSize: FONT_SIZE_LOGIN_FIELDS,
-            fontFamily: FONT_BANK_GOTHIC,
-          ),
-          keyboardType: keyboardType,
+            Expanded(
+              child: TextField(
+                obscureText: obscure,
+                decoration: InputDecoration(
+                  hintText: hint,
+                  enabledBorder: InputBorder.none,
+                  focusedBorder: InputBorder.none,
+                  errorBorder: InputBorder.none,
+                  disabledBorder: InputBorder.none,
+                  hintStyle: TextStyle(
+                    color: COLOR_SHAMROCK,
+                    fontFamily: FONT_BANK_GOTHIC,
+                  ),
+                ),
+                onChanged: (value) {
+                  onTextChange(value);
+                },
+                style: TextStyle(
+                  color: COLOR_CARIBBEAN_GREEN,
+                  fontSize: FONT_SIZE_LOGIN_FIELDS,
+                  fontFamily: FONT_BANK_GOTHIC,
+                ),
+                keyboardType: keyboardType,
+              ),
+            ),
+          ],
         ),
       ),
     );

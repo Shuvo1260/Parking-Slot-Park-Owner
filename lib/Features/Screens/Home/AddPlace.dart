@@ -36,6 +36,7 @@ class _AddPlaceState extends State<AddPlace> {
                     obscure: false,
                     hint: "Address",
                     keyboardType: TextInputType.streetAddress,
+                    icon: Icons.add_location,
                   ),
                 ],
               ),
