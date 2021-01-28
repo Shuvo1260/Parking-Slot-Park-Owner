@@ -31,12 +31,43 @@ class _AddPlaceState extends State<AddPlace> {
             child: SingleChildScrollView(
               child: Column(
                 children: [
+                  // Address field
                   AddPlaceTextField(
-                    (value) {},
+                    (value) {
+                      print(value);
+                    },
                     obscure: false,
-                    hint: "Address",
+                    hint: HINT_ADDRESS,
                     keyboardType: TextInputType.streetAddress,
-                    icon: Icons.add_location,
+                    icon: Icons.place,
+                  ),
+
+                  SizedBox(
+                    height: 20.0,
+                  ),
+
+                  AddPlaceTextField(
+                    (value) {
+                      print(value);
+                    },
+                    obscure: false,
+                    hint: HINT_RATE,
+                    keyboardType: TextInputType.streetAddress,
+                    icon: Icons.attach_money,
+                  ),
+
+                  SizedBox(
+                    height: 20.0,
+                  ),
+
+                  AddPlaceTextField(
+                    (value) {
+                      print(value);
+                    },
+                    obscure: false,
+                    hint: TITLE_TOTAL_SLOT,
+                    keyboardType: TextInputType.streetAddress,
+                    icon: Icons.park,
                   ),
                 ],
               ),
