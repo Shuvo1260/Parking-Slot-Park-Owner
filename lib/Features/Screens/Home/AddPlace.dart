@@ -52,7 +52,8 @@ class _AddPlaceState extends State<AddPlace> {
                     },
                     obscure: false,
                     hint: HINT_RATE,
-                    keyboardType: TextInputType.streetAddress,
+                    keyboardType:
+                        TextInputType.numberWithOptions(decimal: true),
                     icon: Icons.attach_money,
                   ),
 
@@ -66,7 +67,8 @@ class _AddPlaceState extends State<AddPlace> {
                     },
                     obscure: false,
                     hint: TITLE_TOTAL_SLOT,
-                    keyboardType: TextInputType.streetAddress,
+                    keyboardType:
+                        TextInputType.numberWithOptions(decimal: false),
                     icon: Icons.park,
                   ),
                 ],
