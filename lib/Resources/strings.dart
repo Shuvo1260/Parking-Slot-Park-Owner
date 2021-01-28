@@ -36,6 +36,7 @@ const APPBAR_TITLES = [
 ];
 
 const APPBAR_PLACE = "Place";
+const APPBAR_ADD_PLACE = "Place details";
 
 // Titles
 const TITLE_SLOT_DETAILS = "Slot details";
