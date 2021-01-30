@@ -51,11 +51,6 @@ class _AddPlaceState extends State<AddPlace> {
                           offset: Offset(0, 3),
                         )
                       ],
-                      // image: DecorationImage(
-                      //   image: AssetImage(IMAGE_ADD_IMAGE),
-                      //   alignment: Alignment.center,
-                      //   scale: 1.0,
-                      // ),
                     ),
                     height: HEIGHT_PARKING_PLACE_IMAGE,
                     child: FlatButton(
