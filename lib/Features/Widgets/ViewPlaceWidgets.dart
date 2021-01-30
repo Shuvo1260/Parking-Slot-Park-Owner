@@ -17,7 +17,7 @@ class ViewPlaceImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 200.0,
+      height: HEIGHT_PARKING_PLACE_IMAGE,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.all(

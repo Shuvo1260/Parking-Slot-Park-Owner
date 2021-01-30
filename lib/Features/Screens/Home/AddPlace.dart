@@ -33,26 +33,32 @@ class _AddPlaceState extends State<AddPlace> {
                 children: [
                   // Image field
 
-                  // Container(
-                  //   decoration: BoxDecoration(
-                  //     color: Colors.white,
-                  //     borderRadius: BorderRadius.all(
-                  //       Radius.circular(15.0),
-                  //     ),
-                  //     boxShadow: [
-                  //       BoxShadow(
-                  //         color: Colors.grey.withOpacity(0.5),
-                  //         spreadRadius: 3,
-                  //         blurRadius: 7,
-                  //         offset: Offset(0, 3),
-                  //       )
-                  //     ],
-                  //     image: DecorationImage(
-                  //       image: AssetImage(IMAGE_ADD_IMAGE),
-                  //     ),
-                  //   ),
-                  // ),
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(15.0),
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 3,
+                          blurRadius: 7,
+                          offset: Offset(0, 3),
+                        )
+                      ],
+                      image: DecorationImage(
+                        image: AssetImage(IMAGE_ADD_IMAGE),
+                        alignment: Alignment.center,
+                        scale: 1.0,
+                      ),
+                    ),
+                    height: HEIGHT_PARKING_PLACE_IMAGE,
+                  ),
 
+                  SizedBox(
+                    height: 20.0,
+                  ),
                   // Address field
                   AddPlaceTextField(
                     (value) {
