@@ -31,6 +31,28 @@ class _AddPlaceState extends State<AddPlace> {
             child: SingleChildScrollView(
               child: Column(
                 children: [
+                  // Image field
+
+                  // Container(
+                  //   decoration: BoxDecoration(
+                  //     color: Colors.white,
+                  //     borderRadius: BorderRadius.all(
+                  //       Radius.circular(15.0),
+                  //     ),
+                  //     boxShadow: [
+                  //       BoxShadow(
+                  //         color: Colors.grey.withOpacity(0.5),
+                  //         spreadRadius: 3,
+                  //         blurRadius: 7,
+                  //         offset: Offset(0, 3),
+                  //       )
+                  //     ],
+                  //     image: DecorationImage(
+                  //       image: AssetImage(IMAGE_ADD_IMAGE),
+                  //     ),
+                  //   ),
+                  // ),
+
                   // Address field
                   AddPlaceTextField(
                     (value) {
