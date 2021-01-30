@@ -30,6 +30,7 @@ class _AddPlaceState extends State<AddPlace> {
             padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 20.0),
             child: SingleChildScrollView(
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   // Image field
 
@@ -54,6 +55,12 @@ class _AddPlaceState extends State<AddPlace> {
                       ),
                     ),
                     height: HEIGHT_PARKING_PLACE_IMAGE,
+                    child: FlatButton(
+                      onPressed: () {},
+                      child: Image.network(
+                          "https://i.pinimg.com/originals/66/d0/86/66d0863ef27e8dc8ab401072a526693f.jpg"),
+                      padding: EdgeInsets.all(0.0),
+                    ),
                   ),
 
                   SizedBox(
