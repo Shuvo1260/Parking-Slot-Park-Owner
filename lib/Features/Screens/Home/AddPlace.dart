@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:parking_slot_seller/Features/Widgets/AddPlaceWidgets.dart';
 import 'package:parking_slot_seller/Resources/assets.dart';
@@ -11,6 +13,7 @@ class AddPlace extends StatefulWidget {
 }
 
 class _AddPlaceState extends State<AddPlace> {
+  var _imageUrl;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -48,17 +51,16 @@ class _AddPlaceState extends State<AddPlace> {
                           offset: Offset(0, 3),
                         )
                       ],
-                      image: DecorationImage(
-                        image: AssetImage(IMAGE_ADD_IMAGE),
-                        alignment: Alignment.center,
-                        scale: 1.0,
-                      ),
+                      // image: DecorationImage(
+                      //   image: AssetImage(IMAGE_ADD_IMAGE),
+                      //   alignment: Alignment.center,
+                      //   scale: 1.0,
+                      // ),
                     ),
                     height: HEIGHT_PARKING_PLACE_IMAGE,
                     child: FlatButton(
                       onPressed: () {},
-                      child: Image.network(
-                          "https://i.pinimg.com/originals/66/d0/86/66d0863ef27e8dc8ab401072a526693f.jpg"),
+                      child: _getImage(_imageUrl),
                       padding: EdgeInsets.all(0.0),
                     ),
                   ),
@@ -113,5 +115,18 @@ class _AddPlaceState extends State<AddPlace> {
         ),
       ),
     );
+  }
+}
+
+Widget _getImage(imageUrl) {
+  if (imageUrl == null) {
+    return Image(
+      image: AssetImage(
+        IMAGE_ADD_IMAGE,
+      ),
+      height: HEIGHT_PARKING_PLACE_ADD_IMAGE,
+    );
+  } else {
+    return Image.file(File(imageUrl));
   }
 }
