@@ -57,7 +57,7 @@ class _AddPlaceState extends State<AddPlace> {
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.all(
-                        Radius.circular(15.0),
+                        Radius.circular(RADIUS_PREVIEW_IMAGE),
                       ),
                       boxShadow: [
                         BoxShadow(
@@ -138,6 +138,17 @@ Widget _getImage(imageUrl) {
       height: HEIGHT_PARKING_PLACE_ADD_IMAGE,
     );
   } else {
-    return Image.file(File(imageUrl));
+    return ConstrainedBox(
+      constraints: BoxConstraints.expand(),
+      child: ClipRRect(
+        borderRadius: BorderRadius.all(
+          Radius.circular(RADIUS_PREVIEW_IMAGE),
+        ),
+        child: Image.file(
+          File(imageUrl),
+          fit: BoxFit.cover,
+        ),
+      ),
+    );
   }
 }
