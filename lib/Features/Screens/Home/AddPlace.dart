@@ -126,7 +126,7 @@ class _AddPlaceState extends State<AddPlace> {
                   ),
 
                   SizedBox(
-                    height: 20.0,
+                    height: 40.0,
                   ),
 
                   SubmitButton(
