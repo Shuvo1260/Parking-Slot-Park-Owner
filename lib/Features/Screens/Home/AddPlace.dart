@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:parking_slot_seller/Features/Widgets/AddPlaceWidgets.dart';
+import 'package:parking_slot_seller/Features/Widgets/widgets_login_registration.dart';
 import 'package:parking_slot_seller/Resources/assets.dart';
 import 'package:parking_slot_seller/Resources/colors.dart';
 import 'package:parking_slot_seller/Resources/strings.dart';
@@ -28,6 +29,10 @@ class _AddPlaceState extends State<AddPlace> {
         print('No image selected.');
       }
     });
+  }
+
+  void saveData() async {
+    //
   }
 
   @override
@@ -118,6 +123,15 @@ class _AddPlaceState extends State<AddPlace> {
                     keyboardType:
                         TextInputType.numberWithOptions(decimal: false),
                     icon: Icons.park,
+                  ),
+
+                  SizedBox(
+                    height: 20.0,
+                  ),
+
+                  SubmitButton(
+                    onPressed: saveData,
+                    text: BUTTON_ADD_PLACE,
                   ),
                 ],
               ),

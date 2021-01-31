@@ -19,6 +19,8 @@ const HINT_PHONE = "Phone";
 const HINT_ADDRESS = "Address";
 const HINT_RATE = "Rate";
 
+// Buttons
+const BUTTON_ADD_PLACE = "add place";
 // Bottom navigation texts
 
 const BOTTOM_NAVIGATION_ITEM_1 = "Home";
