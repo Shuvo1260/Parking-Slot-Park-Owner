@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:parking_slot_seller/Features/Widgets/AddPlaceWidgets.dart';
 import 'package:parking_slot_seller/Resources/assets.dart';
 import 'package:parking_slot_seller/Resources/colors.dart';
@@ -14,6 +15,21 @@ class AddPlace extends StatefulWidget {
 
 class _AddPlaceState extends State<AddPlace> {
   var _imageUrl;
+
+  final picker = ImagePicker();
+
+  Future getImage() async {
+    final pickedFile = await picker.getImage(source: ImageSource.camera);
+
+    setState(() {
+      if (pickedFile != null) {
+        _imageUrl = pickedFile.path;
+      } else {
+        print('No image selected.');
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -54,7 +70,7 @@ class _AddPlaceState extends State<AddPlace> {
                     ),
                     height: HEIGHT_PARKING_PLACE_IMAGE,
                     child: FlatButton(
-                      onPressed: () {},
+                      onPressed: getImage,
                       child: _getImage(_imageUrl),
                       padding: EdgeInsets.all(0.0),
                     ),
