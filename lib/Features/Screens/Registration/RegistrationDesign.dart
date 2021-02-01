@@ -10,11 +10,11 @@ class RegistrationDesign extends StatefulWidget {
 }
 
 class _RegistrationDesignState extends State<RegistrationDesign> {
-  var phone;
-  var email;
-  var address;
-  var password;
-  var name;
+  var _phone;
+  var _email;
+  var _address;
+  var _password;
+  var _name;
 
   @override
   void initState() {
@@ -46,7 +46,7 @@ class _RegistrationDesignState extends State<RegistrationDesign> {
           children: [
             LoginTextField(
               (value) {
-                name = value;
+                _name = value;
               },
               hint: HINT_NAME,
               keyboardType: TextInputType.text,
@@ -57,7 +57,7 @@ class _RegistrationDesignState extends State<RegistrationDesign> {
             ),
             LoginTextField(
               (value) {
-                phone = value;
+                _phone = value;
               },
               hint: HINT_PHONE,
               keyboardType: TextInputType.phone,
@@ -68,7 +68,7 @@ class _RegistrationDesignState extends State<RegistrationDesign> {
             ),
             LoginTextField(
               (value) {
-                address = value;
+                _address = value;
               },
               hint: HINT_ADDRESS,
               keyboardType: TextInputType.streetAddress,
@@ -79,7 +79,7 @@ class _RegistrationDesignState extends State<RegistrationDesign> {
             ),
             LoginTextField(
               (value) {
-                email = value;
+                _email = value;
               },
               hint: HINT_EMAIL,
               keyboardType: TextInputType.emailAddress,
@@ -90,7 +90,7 @@ class _RegistrationDesignState extends State<RegistrationDesign> {
             ),
             LoginTextField(
               (value) {
-                password = value;
+                _password = value;
               },
               hint: HINT_PASSWORD,
               keyboardType: TextInputType.visiblePassword,
