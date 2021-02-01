@@ -10,6 +10,21 @@ class RegistrationDesign extends StatefulWidget {
 }
 
 class _RegistrationDesignState extends State<RegistrationDesign> {
+  var phone;
+  var email;
+  var address;
+  var password;
+  var name;
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  void SignUpUser() {
+    //
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -31,7 +46,7 @@ class _RegistrationDesignState extends State<RegistrationDesign> {
           children: [
             LoginTextField(
               (value) {
-                print(value);
+                name = value;
               },
               hint: HINT_NAME,
               keyboardType: TextInputType.text,
@@ -42,7 +57,7 @@ class _RegistrationDesignState extends State<RegistrationDesign> {
             ),
             LoginTextField(
               (value) {
-                print(value);
+                phone = value;
               },
               hint: HINT_PHONE,
               keyboardType: TextInputType.phone,
@@ -53,7 +68,7 @@ class _RegistrationDesignState extends State<RegistrationDesign> {
             ),
             LoginTextField(
               (value) {
-                print(value);
+                address = value;
               },
               hint: HINT_ADDRESS,
               keyboardType: TextInputType.streetAddress,
@@ -64,7 +79,7 @@ class _RegistrationDesignState extends State<RegistrationDesign> {
             ),
             LoginTextField(
               (value) {
-                print(value);
+                email = value;
               },
               hint: HINT_EMAIL,
               keyboardType: TextInputType.emailAddress,
@@ -75,7 +90,7 @@ class _RegistrationDesignState extends State<RegistrationDesign> {
             ),
             LoginTextField(
               (value) {
-                print(value);
+                password = value;
               },
               hint: HINT_PASSWORD,
               keyboardType: TextInputType.visiblePassword,
@@ -86,18 +101,14 @@ class _RegistrationDesignState extends State<RegistrationDesign> {
             ),
             SubmitButton(
               text: HINT_REGISTRATION,
-              onPressed: () {
-                print("Pressed");
-              },
+              onPressed: () => SignUpUser,
             ),
             SizedBox(
               height: 20.0,
             ),
             BottomOption(
               text: ALREADY_HAVE_AN_ACCOUNT,
-              onPressed: () {
-                Get.back();
-              },
+              onPressed: () => Get.back(),
             )
           ],
         ),
