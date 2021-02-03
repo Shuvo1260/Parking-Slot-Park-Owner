@@ -22,7 +22,8 @@ class _RegistrationDesignState extends State<RegistrationDesign> {
   }
 
   void SignUpUser() {
-    //
+    print(
+        "name: $_name email: $_email phoneNumber: $_phone, address: $_address, password: $_password");
   }
 
   @override
@@ -46,7 +47,9 @@ class _RegistrationDesignState extends State<RegistrationDesign> {
           children: [
             LoginTextField(
               (value) {
-                _name = value;
+                setState(() {
+                  _name = value;
+                });
               },
               hint: HINT_NAME,
               keyboardType: TextInputType.text,
@@ -57,7 +60,9 @@ class _RegistrationDesignState extends State<RegistrationDesign> {
             ),
             LoginTextField(
               (value) {
-                _phone = value;
+                setState(() {
+                  _phone = value;
+                });
               },
               hint: HINT_PHONE,
               keyboardType: TextInputType.phone,
@@ -68,7 +73,9 @@ class _RegistrationDesignState extends State<RegistrationDesign> {
             ),
             LoginTextField(
               (value) {
-                _address = value;
+                setState(() {
+                  _address = value;
+                });
               },
               hint: HINT_ADDRESS,
               keyboardType: TextInputType.streetAddress,
@@ -79,7 +86,9 @@ class _RegistrationDesignState extends State<RegistrationDesign> {
             ),
             LoginTextField(
               (value) {
-                _email = value;
+                setState(() {
+                  _email = value;
+                });
               },
               hint: HINT_EMAIL,
               keyboardType: TextInputType.emailAddress,
@@ -90,7 +99,9 @@ class _RegistrationDesignState extends State<RegistrationDesign> {
             ),
             LoginTextField(
               (value) {
-                _password = value;
+                setState(() {
+                  _password = value;
+                });
               },
               hint: HINT_PASSWORD,
               keyboardType: TextInputType.visiblePassword,
