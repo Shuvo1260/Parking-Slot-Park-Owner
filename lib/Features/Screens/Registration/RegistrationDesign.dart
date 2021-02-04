@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:parking_slot_seller/Features/Widgets/widgets_login_registration.dart';
 import 'package:parking_slot_seller/Resources/strings.dart';
 import 'package:parking_slot_seller/Resources/values.dart';
+import 'package:parking_slot_seller/Utils/AppManager.dart';
 import 'package:parking_slot_seller/Utils/AuthManager.dart';
 
 class RegistrationDesign extends StatefulWidget {
@@ -27,21 +27,24 @@ class _RegistrationDesignState extends State<RegistrationDesign> {
   }
 
   void _signUpUser() {
-    Fluttertoast.showToast(
-      msg: "Signing up",
-      toastLength: Toast.LENGTH_SHORT,
-      gravity: ToastGravity.BOTTOM,
-      backgroundColor: Colors.red,
-      textColor: Colors.white,
-      fontSize: 16.0,
-    );
     print(
         "name: $_name email: $_email phoneNumber: $_phone, address: $_address, password: $_password");
     if (_checkValidity()) _authManager.isUserExist(_email);
   }
 
   bool _checkValidity() {
+    if (_name == null) {
+      showToast("Name can't be empty");
+      return false;
+    }
     return true;
+  }
+
+  void showToast(message) {
+    AppManager.showToast(
+      message: message,
+      backgroundColor: Colors.red,
+    );
   }
 
   @override
