@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:parking_slot_seller/Data/Models/UserData.dart';
 import 'package:parking_slot_seller/Features/Widgets/widgets_login_registration.dart';
 import 'package:parking_slot_seller/Resources/strings.dart';
 import 'package:parking_slot_seller/Resources/values.dart';
@@ -12,11 +13,11 @@ class RegistrationDesign extends StatefulWidget {
 }
 
 class _RegistrationDesignState extends State<RegistrationDesign> {
+  var _name;
   var _phone;
   var _email;
   var _address;
   var _password;
-  var _name;
 
   AuthManager _authManager;
 
@@ -30,9 +31,19 @@ class _RegistrationDesignState extends State<RegistrationDesign> {
     print(
         "name: $_name email: $_email phoneNumber: $_phone, address: $_address, password: $_password");
     if (_checkValidity()) {
-      if (await _authManager.isUserExist(AppManager.emailToID(_email))) {
-        // UserData userData = UserData(id: null, name: null, phoneNumber: null, address: null, email: null, password: null, imageUrl: null)
-        // _authManager.signUP(userData);
+      var id = AppManager.emailToID(_email);
+      if (!await _authManager.isUserExist(id)) {
+        UserData userData = UserData(
+          id: id,
+          name: _name,
+          phoneNumber: _phone,
+          address: _address,
+          email: _email,
+          password: _password,
+          imageUrl: null,
+        );
+        _authManager.signUP(userData);
+        AppManager.showToast(message: "Signing up");
       }
     }
   }
@@ -55,7 +66,7 @@ class _RegistrationDesignState extends State<RegistrationDesign> {
       return false;
     }
     if (_password == null) {
-      showToast("Name can't be empty");
+      showToast("Password can't be empty");
       return false;
     }
     return true;
