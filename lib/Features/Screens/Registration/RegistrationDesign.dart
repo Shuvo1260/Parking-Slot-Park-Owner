@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:parking_slot_seller/Features/Widgets/widgets_login_registration.dart';
 import 'package:parking_slot_seller/Resources/strings.dart';
@@ -22,6 +23,14 @@ class _RegistrationDesignState extends State<RegistrationDesign> {
   }
 
   void SignUpUser() {
+    Fluttertoast.showToast(
+      msg: "Signing up",
+      toastLength: Toast.LENGTH_SHORT,
+      gravity: ToastGravity.CENTER,
+      backgroundColor: Colors.red,
+      textColor: Colors.white,
+      fontSize: 16.0,
+    );
     print(
         "name: $_name email: $_email phoneNumber: $_phone, address: $_address, password: $_password");
   }
@@ -112,7 +121,7 @@ class _RegistrationDesignState extends State<RegistrationDesign> {
             ),
             SubmitButton(
               text: HINT_REGISTRATION,
-              onPressed: () => SignUpUser,
+              onPressed: () => SignUpUser(),
             ),
             SizedBox(
               height: 20.0,
