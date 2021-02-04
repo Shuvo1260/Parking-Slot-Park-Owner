@@ -1,5 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:parking_slot_seller/Data/Models/UserData.dart';
+import 'package:parking_slot_seller/Features/Screens/Login/login.dart';
 import 'package:parking_slot_seller/Resources/assets.dart';
 import 'package:parking_slot_seller/Resources/colors.dart';
 import 'package:parking_slot_seller/Resources/strings.dart';
@@ -171,7 +174,12 @@ class SignOutWidget extends StatelessWidget {
       margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
       child: FlatButton(
         padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
-        onPressed: () {},
+        onPressed: () {
+          FirebaseAuth.instance.signOut();
+          Get.off(
+            LoginScreen(),
+          );
+        },
         child: Row(
           children: [
             Icon(Icons.exit_to_app),
