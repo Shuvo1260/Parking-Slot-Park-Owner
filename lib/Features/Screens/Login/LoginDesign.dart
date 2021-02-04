@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:parking_slot_seller/Features/Screens/Home/Home.dart';
 import 'package:parking_slot_seller/Features/Screens/Registration/Registration.dart';
 import 'package:parking_slot_seller/Features/Widgets/widgets_login_registration.dart';
 import 'package:parking_slot_seller/Resources/strings.dart';
 import 'package:parking_slot_seller/Resources/values.dart';
 import 'package:parking_slot_seller/Utils/AppManager.dart';
+import 'package:parking_slot_seller/Utils/AuthManager.dart';
 
 class DesignLoginBottom extends StatefulWidget {
   @override
@@ -15,9 +17,23 @@ class _DesignLoginBottomState extends State<DesignLoginBottom> {
   var _email;
   var _password;
 
-  void _signIn() {
+  AuthManager _authManager;
+
+  @override
+  void initState() {
+    super.initState();
+    _authManager = AuthManager();
+  }
+
+  void _signIn() async {
     if (_checkValidity()) {
-      //
+      String value = await _authManager.signIn(_email, _password);
+      if (value == "Success") {
+        AppManager.showToast(message: "Successfully logged in");
+        Get.off(HomePage());
+      } else {
+        _showToast(value);
+      }
     }
   }
 

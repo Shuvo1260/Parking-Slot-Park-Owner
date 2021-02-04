@@ -44,16 +44,29 @@ class AuthManager {
     }
   }
 
-  Future<void> signIn(email, password) async {
-    await _firebaseAuth
-        .signInWithEmailAndPassword(
-      email: email,
-      password: password,
-    )
-        .then((value) {
+  Future<String> signIn(email, password) async {
+    try {
+      var value = await _firebaseAuth.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+      print("SignIn: ${value.user}");
       if (value.user != null) {
-        //
+        return "Success";
+      } else {
+        return "Sign in failed";
       }
-    });
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        print('No user found for that email.');
+        return "User not found";
+      } else if (e.code == 'wrong-password') {
+        print('Wrong password provided for that user.');
+        return "Wrong password";
+      }
+    } catch (error) {
+      print("SignInError: $error");
+      return error.toString();
+    }
   }
 }
