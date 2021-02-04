@@ -18,7 +18,19 @@ class AuthManager {
     return false;
   }
 
-  void signUP(UserData userData) async {}
+  Future<bool> signUP(UserData userData) async {
+    if (await _saveUserData(userData)) {
+      _firebaseAuth
+          .createUserWithEmailAndPassword(
+              email: userData.email, password: userData.password)
+          .then((value) {
+        if (value.user != null) {
+          return true;
+        }
+      });
+    }
+    return false;
+  }
 
   Future<bool> _saveUserData(UserData userData) async {}
 
