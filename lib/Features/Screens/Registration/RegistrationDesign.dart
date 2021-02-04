@@ -26,14 +26,35 @@ class _RegistrationDesignState extends State<RegistrationDesign> {
     _authManager = AuthManager();
   }
 
-  void _signUpUser() {
+  void _signUpUser() async {
     print(
         "name: $_name email: $_email phoneNumber: $_phone, address: $_address, password: $_password");
-    if (_checkValidity()) _authManager.isUserExist(_email);
+    if (_checkValidity()) {
+      if (await _authManager.isUserExist(AppManager.emailToID(_email))) {
+        // UserData userData = UserData(id: null, name: null, phoneNumber: null, address: null, email: null, password: null, imageUrl: null)
+        // _authManager.signUP(userData);
+      }
+    }
   }
 
   bool _checkValidity() {
     if (_name == null) {
+      showToast("Name can't be empty");
+      return false;
+    }
+    if (_phone == null) {
+      showToast("Phone can't be empty");
+      return false;
+    }
+    if (_address == null) {
+      showToast("Address can't be empty");
+      return false;
+    }
+    if (_email == null) {
+      showToast("Email can't be empty");
+      return false;
+    }
+    if (_password == null) {
       showToast("Name can't be empty");
       return false;
     }

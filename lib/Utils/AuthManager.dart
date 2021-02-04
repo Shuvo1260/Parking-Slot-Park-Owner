@@ -11,11 +11,8 @@ class AuthManager {
     _firebaseAuth = FirebaseAuth.instance;
   }
 
-  Future<bool> isUserExist(String email) async {
-    var value = await _firestore
-        .collection(PATH_USER_DATA)
-        .document(email.replaceAll(".", "").split("@").first)
-        .get();
+  Future<bool> isUserExist(String id) async {
+    var value = await _firestore.collection(PATH_USER_DATA).document(id).get();
     print(value.data);
     if (value.data != null) return true;
     return false;

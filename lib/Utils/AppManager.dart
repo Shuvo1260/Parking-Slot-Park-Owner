@@ -15,4 +15,8 @@ class AppManager {
       fontSize: 16.0,
     );
   }
+
+  static String emailToID(email) {
+    return email.replaceAll(".", "").split("@").first;
+  }
 }
