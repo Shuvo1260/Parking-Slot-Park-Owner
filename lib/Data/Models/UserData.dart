@@ -19,4 +19,14 @@ class UserData {
       @required this.email,
       @required this.password,
       @required this.imageUrl});
+
+  Map<String, dynamic> toJSON() => {
+        'id': id,
+        'name': name,
+        'phoneNumber': phoneNumber,
+        'address': address,
+        'email': email,
+        'password': password,
+        'imageUrl': imageUrl
+      };
 }

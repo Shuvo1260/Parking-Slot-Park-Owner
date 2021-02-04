@@ -32,7 +32,12 @@ class AuthManager {
     return false;
   }
 
-  Future<bool> _saveUserData(UserData userData) async {}
+  Future<bool> _saveUserData(UserData userData) async {
+    // _firestore.collection(PATH_USER_DATA).document(userData).then((value) {},
+    //     onError: (error) {
+    //   print("UserDataSavingError: $error");
+    // });
+  }
 
   Future<void> signIn(email, password) async {
     await _firebaseAuth
