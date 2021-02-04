@@ -69,6 +69,12 @@ class _RegistrationDesignState extends State<RegistrationDesign> {
       showToast("Password can't be empty");
       return false;
     }
+
+    if (!AppManager.isEmailValid(_email)) {
+      showToast("Please enter a valid email");
+      return false;
+    }
+
     return true;
   }
 

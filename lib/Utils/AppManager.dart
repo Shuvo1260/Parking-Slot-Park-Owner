@@ -19,4 +19,10 @@ class AppManager {
   static String emailToID(email) {
     return email.replaceAll(".", "").split("@").first;
   }
+
+  static bool isEmailValid(email) {
+    return RegExp(
+            r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+        .hasMatch(email);
+  }
 }
