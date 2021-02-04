@@ -1,9 +1,11 @@
 import 'dart:async';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:parking_slot_seller/Features/Screens/main_activity.dart';
 import 'package:parking_slot_seller/Features/Widgets/widgets_splash_screen.dart';
 import 'package:parking_slot_seller/Resources/colors.dart';
 
@@ -68,9 +70,14 @@ class _SplashScreenState extends State<SplashScreen> {
       Duration(seconds: 4),
       () {
         print("3 seconds");
-        Get.off(
-          LoginScreen(),
-        );
+        if (FirebaseAuth.instance.currentUser == null)
+          Get.off(
+            LoginScreen(),
+          );
+        else
+          Get.off(
+            MainActivity(),
+          );
       },
     );
   }
