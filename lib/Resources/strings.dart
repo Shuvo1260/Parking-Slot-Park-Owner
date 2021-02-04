@@ -49,3 +49,6 @@ const TITLE_PARKED_SLOT = "Parked slots";
 // Normal strings
 const SIGN_TAKA = "৳";
 const SIGN_OUT = "Sign out";
+
+// Database paths
+const PATH_USER_DATA = "Users";

@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:parking_slot_seller/Data/Models/UserData.dart';
+import 'package:parking_slot_seller/Resources/strings.dart';
 
 class AuthManager {
   Firestore _firestore;
@@ -10,25 +11,30 @@ class AuthManager {
     _firebaseAuth = FirebaseAuth.instance;
   }
 
-  bool isUserExist(UserData userData) {
+  Future<bool> isUserExist(String email) async {
+    var value = await _firestore
+        .collection(PATH_USER_DATA)
+        .document(email.replaceAll(".", "").split("@").first)
+        .get();
+    print(value.data);
+    if (value.data != null) return true;
     return false;
   }
 
-  void signUP() async {
-    await _firestore.collection("path");
-  }
+  void signUP(UserData userData) async {}
+
+  Future<bool> _saveUserData(UserData userData) async {}
 
   Future<void> signIn(email, password) async {
     await _firebaseAuth
         .signInWithEmailAndPassword(
-          email: email,
-          password: password,
-        )
-        .then((value) => {
-              if (value.user != null)
-                {
-                  //
-                }
-            });
+      email: email,
+      password: password,
+    )
+        .then((value) {
+      if (value.user != null) {
+        //
+      }
+    });
   }
 }

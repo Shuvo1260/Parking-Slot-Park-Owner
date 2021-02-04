@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:parking_slot_seller/Features/Widgets/widgets_login_registration.dart';
 import 'package:parking_slot_seller/Resources/strings.dart';
 import 'package:parking_slot_seller/Resources/values.dart';
+import 'package:parking_slot_seller/Utils/AuthManager.dart';
 
 class RegistrationDesign extends StatefulWidget {
   @override
@@ -17,22 +18,30 @@ class _RegistrationDesignState extends State<RegistrationDesign> {
   var _password;
   var _name;
 
+  AuthManager _authManager;
+
   @override
   void initState() {
     super.initState();
+    _authManager = AuthManager();
   }
 
-  void SignUpUser() {
+  void _signUpUser() {
     Fluttertoast.showToast(
       msg: "Signing up",
       toastLength: Toast.LENGTH_SHORT,
-      gravity: ToastGravity.CENTER,
+      gravity: ToastGravity.BOTTOM,
       backgroundColor: Colors.red,
       textColor: Colors.white,
       fontSize: 16.0,
     );
     print(
         "name: $_name email: $_email phoneNumber: $_phone, address: $_address, password: $_password");
+    if (_checkValidity()) _authManager.isUserExist(_email);
+  }
+
+  bool _checkValidity() {
+    return true;
   }
 
   @override
@@ -121,7 +130,7 @@ class _RegistrationDesignState extends State<RegistrationDesign> {
             ),
             SubmitButton(
               text: HINT_REGISTRATION,
-              onPressed: () => SignUpUser(),
+              onPressed: () => _signUpUser(),
             ),
             SizedBox(
               height: 20.0,
