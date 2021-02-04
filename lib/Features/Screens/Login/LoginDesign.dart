@@ -4,6 +4,7 @@ import 'package:parking_slot_seller/Features/Screens/Registration/Registration.d
 import 'package:parking_slot_seller/Features/Widgets/widgets_login_registration.dart';
 import 'package:parking_slot_seller/Resources/strings.dart';
 import 'package:parking_slot_seller/Resources/values.dart';
+import 'package:parking_slot_seller/Utils/AppManager.dart';
 
 class DesignLoginBottom extends StatefulWidget {
   @override
@@ -15,7 +16,38 @@ class _DesignLoginBottomState extends State<DesignLoginBottom> {
   var _password;
 
   void _signIn() {
-    //
+    if (_checkValidity()) {
+      //
+    }
+  }
+
+  bool _checkValidity() {
+    if (_email == null) {
+      _showToast("Email can't be empty");
+      return false;
+    }
+    if (_password == null) {
+      _showToast("Password can't be empty");
+      return false;
+    }
+
+    if (!AppManager.isEmailValid(_email)) {
+      _showToast("Please enter a valid email");
+      return false;
+    }
+
+    if (_password.toString().length < 6) {
+      _showToast("Password should be at least 6 characters");
+      return false;
+    }
+    return true;
+  }
+
+  void _showToast(message) {
+    AppManager.showToast(
+      message: message,
+      backgroundColor: Colors.red,
+    );
   }
 
   @override

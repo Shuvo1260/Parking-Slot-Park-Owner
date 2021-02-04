@@ -71,40 +71,40 @@ class _RegistrationDesignState extends State<RegistrationDesign> {
 
   bool _checkValidity() {
     if (_name == null) {
-      showToast("Name can't be empty");
+      _showToast("Name can't be empty");
       return false;
     }
     if (_phone == null) {
-      showToast("Phone can't be empty");
+      _showToast("Phone can't be empty");
       return false;
     }
     if (_address == null) {
-      showToast("Address can't be empty");
+      _showToast("Address can't be empty");
       return false;
     }
     if (_email == null) {
-      showToast("Email can't be empty");
+      _showToast("Email can't be empty");
       return false;
     }
     if (_password == null) {
-      showToast("Password can't be empty");
+      _showToast("Password can't be empty");
       return false;
     }
 
     if (!AppManager.isEmailValid(_email)) {
-      showToast("Please enter a valid email");
+      _showToast("Please enter a valid email");
       return false;
     }
 
     if (_password.toString().length < 6) {
-      showToast("Password should be at least 6 characters");
+      _showToast("Password should be at least 6 characters");
       return false;
     }
 
     return true;
   }
 
-  void showToast(message) {
+  void _showToast(message) {
     AppManager.showToast(
       message: message,
       backgroundColor: Colors.red,
