@@ -33,10 +33,16 @@ class AuthManager {
   }
 
   Future<bool> _saveUserData(UserData userData) async {
-    // _firestore.collection(PATH_USER_DATA).document(userData).then((value) {},
-    //     onError: (error) {
-    //   print("UserDataSavingError: $error");
-    // });
+    _firestore
+        .collection(PATH_USER_DATA)
+        .document(userData.id)
+        .setData(userData.toJSON())
+        .then((value) {
+      return true;
+    }, onError: (error) {
+      print("UserDataSavingError: $error");
+      return false;
+    });
   }
 
   Future<void> signIn(email, password) async {

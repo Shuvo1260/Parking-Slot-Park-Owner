@@ -42,8 +42,18 @@ class _RegistrationDesignState extends State<RegistrationDesign> {
           password: _password,
           imageUrl: null,
         );
-        _authManager.signUP(userData);
         AppManager.showToast(message: "Signing up");
+
+        if (await _authManager.signUP(userData)) {
+          AppManager.showToast(message: "Successfully signed up");
+        } else {
+          AppManager.showToast(
+              message: "Signing failed", backgroundColor: Colors.red);
+        }
+      } else {
+        AppManager.showToast(
+            message: "This email has registered before",
+            backgroundColor: Colors.blue);
       }
     }
   }
