@@ -54,6 +54,7 @@ class _RegistrationDesignState extends State<RegistrationDesign> {
         if (await _authManager.signUP(userData)) {
           AppManager.showToast(message: "Successfully signed up");
           progressDialog.hide();
+          Get.back();
         } else {
           AppManager.showToast(
               message: "Signing failed", backgroundColor: Colors.red);
