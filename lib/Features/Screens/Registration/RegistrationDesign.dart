@@ -50,7 +50,6 @@ class _RegistrationDesignState extends State<RegistrationDesign> {
           password: _password,
           imageUrl: null,
         );
-        AppManager.showToast(message: "Signing up");
 
         if (await _authManager.signUP(userData)) {
           AppManager.showToast(message: "Successfully signed up");
@@ -64,6 +63,7 @@ class _RegistrationDesignState extends State<RegistrationDesign> {
         AppManager.showToast(
             message: "This email has registered before",
             backgroundColor: Colors.blue);
+        progressDialog.hide();
       }
     }
   }
