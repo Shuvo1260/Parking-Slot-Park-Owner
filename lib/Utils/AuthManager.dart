@@ -47,7 +47,7 @@ class AuthManager {
   Future<String> signIn(email, password) async {
     try {
       var value = await _firebaseAuth.signInWithEmailAndPassword(
-        email: email,
+        email: email.toString().trim(),
         password: password,
       );
       print("SignIn: ${value.user}");

@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:parking_slot_seller/Features/Screens/Home/Home.dart';
 import 'package:parking_slot_seller/Features/Screens/Registration/Registration.dart';
 import 'package:parking_slot_seller/Features/Widgets/widgets_login_registration.dart';
 import 'package:parking_slot_seller/Resources/strings.dart';
 import 'package:parking_slot_seller/Resources/values.dart';
 import 'package:parking_slot_seller/Utils/AppManager.dart';
 import 'package:parking_slot_seller/Utils/AuthManager.dart';
+import 'package:progress_dialog/progress_dialog.dart';
+
+import '../main_activity.dart';
 
 class DesignLoginBottom extends StatefulWidget {
   @override
@@ -27,12 +29,21 @@ class _DesignLoginBottomState extends State<DesignLoginBottom> {
 
   void _signIn() async {
     if (_checkValidity()) {
+      var progressDialog = ProgressDialog(
+        context,
+        type: ProgressDialogType.Normal,
+        isDismissible: false,
+      );
+      progressDialog.style(message: "Signing...");
+      progressDialog.show();
       String value = await _authManager.signIn(_email, _password);
       if (value == "Success") {
         AppManager.showToast(message: "Successfully logged in");
-        Get.off(HomePage());
+        progressDialog.hide();
+        Get.off(MainActivity());
       } else {
         _showToast(value);
+        progressDialog.hide();
       }
     }
   }
