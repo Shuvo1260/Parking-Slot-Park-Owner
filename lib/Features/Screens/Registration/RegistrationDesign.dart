@@ -34,9 +34,11 @@ class _RegistrationDesignState extends State<RegistrationDesign> {
     if (_checkValidity()) {
       var progressDialog = ProgressDialog(
         context,
-        type: ProgressDialogType.Download,
+        type: ProgressDialogType.Normal,
         isDismissible: false,
       );
+      progressDialog.style(message: "Signing up...");
+      progressDialog.show();
       var id = AppManager.emailToID(_email);
       if (!await _authManager.isUserExist(id)) {
         UserData userData = UserData(
