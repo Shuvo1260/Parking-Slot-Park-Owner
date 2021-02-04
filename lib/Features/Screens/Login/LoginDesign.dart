@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:parking_slot_seller/Features/Screens/Registration/Registration.dart';
-import 'package:parking_slot_seller/Features/Screens/main_activity.dart';
 import 'package:parking_slot_seller/Features/Widgets/widgets_login_registration.dart';
 import 'package:parking_slot_seller/Resources/strings.dart';
 import 'package:parking_slot_seller/Resources/values.dart';
@@ -12,6 +11,13 @@ class DesignLoginBottom extends StatefulWidget {
 }
 
 class _DesignLoginBottomState extends State<DesignLoginBottom> {
+  var _email;
+  var _password;
+
+  void _signIn() {
+    //
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -33,6 +39,9 @@ class _DesignLoginBottomState extends State<DesignLoginBottom> {
           children: [
             LoginTextField(
               (value) {
+                setState(() {
+                  _email = value;
+                });
                 print(value);
               },
               hint: HINT_EMAIL,
@@ -44,6 +53,9 @@ class _DesignLoginBottomState extends State<DesignLoginBottom> {
             ),
             LoginTextField(
               (value) {
+                setState(() {
+                  _password = value;
+                });
                 print(value);
               },
               hint: HINT_PASSWORD,
@@ -57,9 +69,7 @@ class _DesignLoginBottomState extends State<DesignLoginBottom> {
               text: HINT_LOGIN,
               onPressed: () {
                 print("Pressed");
-                Get.off(
-                  MainActivity(),
-                );
+                _signIn();
               },
             ),
             SizedBox(
