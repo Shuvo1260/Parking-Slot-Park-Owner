@@ -6,6 +6,7 @@ import 'package:parking_slot_seller/Resources/strings.dart';
 import 'package:parking_slot_seller/Resources/values.dart';
 import 'package:parking_slot_seller/Utils/AppManager.dart';
 import 'package:parking_slot_seller/Utils/AuthManager.dart';
+import 'package:progress_dialog/progress_dialog.dart';
 
 class RegistrationDesign extends StatefulWidget {
   @override
@@ -31,6 +32,11 @@ class _RegistrationDesignState extends State<RegistrationDesign> {
     print(
         "name: $_name email: $_email phoneNumber: $_phone, address: $_address, password: $_password");
     if (_checkValidity()) {
+      var progressDialog = ProgressDialog(
+        context,
+        type: ProgressDialogType.Download,
+        isDismissible: false,
+      );
       var id = AppManager.emailToID(_email);
       if (!await _authManager.isUserExist(id)) {
         UserData userData = UserData(
@@ -46,9 +52,11 @@ class _RegistrationDesignState extends State<RegistrationDesign> {
 
         if (await _authManager.signUP(userData)) {
           AppManager.showToast(message: "Successfully signed up");
+          progressDialog.hide();
         } else {
           AppManager.showToast(
               message: "Signing failed", backgroundColor: Colors.red);
+          progressDialog.hide();
         }
       } else {
         AppManager.showToast(
@@ -82,6 +90,11 @@ class _RegistrationDesignState extends State<RegistrationDesign> {
 
     if (!AppManager.isEmailValid(_email)) {
       showToast("Please enter a valid email");
+      return false;
+    }
+
+    if (_password.toString().length < 6) {
+      showToast("Password should be at least 6 characters");
       return false;
     }
 
