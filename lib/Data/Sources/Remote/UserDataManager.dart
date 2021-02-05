@@ -28,8 +28,11 @@ class UserDataManager {
       var value = await _firestore.collection(PATH_USER_DATA).doc(id).get();
       print(value.data());
       var userData = UserData();
+      userData.fromJSON(value.data());
+      return userData;
     } catch (error) {
       print("UserDataGettingError: $error");
+      return null;
     }
   }
 }
