@@ -56,7 +56,8 @@ class _AddPlaceState extends State<AddPlace> {
       var id = DateTime.now().microsecondsSinceEpoch;
       print("ImageURL-1: $_imageUrl");
       _imageUrl = await PlaceDataManager.uploadFile(_imageUrl, id.toString());
-      print("ImageURL-2: $_imageUrl");
+      _userData = _userController.userData.value;
+      print("ImageURL-2: ${_userData.toJSON()}");
       if (_imageUrl != null) {
         var placeData = PlaceData(
           id: id.toString(),
@@ -109,12 +110,6 @@ class _AddPlaceState extends State<AddPlace> {
       message: message,
       backgroundColor: Colors.red,
     );
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    _userData = _userController.userData.value;
   }
 
   @override
