@@ -52,3 +52,7 @@ const SIGN_OUT = "Sign out";
 
 // Database paths
 const PATH_USER_DATA = "Users";
+
+// Temporary data
+const TEMP_PRO_PIC_URL =
+    "https://img.freepik.com/free-photo/handsome-young-businessman-shirt-eyeglasses_85574-6228.jpg?size=626&ext=jpg";

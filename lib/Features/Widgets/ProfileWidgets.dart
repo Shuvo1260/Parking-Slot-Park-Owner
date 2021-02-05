@@ -94,7 +94,9 @@ class _ProfileImage extends StatelessWidget {
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         image: DecorationImage(
-          image: NetworkImage(_userData.imageUrl),
+          image: NetworkImage(_userData.imageUrl == null
+              ? TEMP_PRO_PIC_URL
+              : _userData.imageUrl),
           fit: BoxFit.fill,
         ),
       ),

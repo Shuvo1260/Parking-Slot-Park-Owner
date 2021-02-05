@@ -17,7 +17,7 @@ class _ProfileState extends State<Profile> {
   void initState() {
     super.initState();
 
-    _userData = _userController.userData as UserData;
+    _userData = _userController.userData.value;
     print("UserData: $_userData");
   }
 
