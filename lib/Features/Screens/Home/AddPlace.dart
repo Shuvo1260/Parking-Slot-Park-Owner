@@ -44,7 +44,7 @@ class _AddPlaceState extends State<AddPlace> {
         isDismissible: false,
       );
       progressDialog.style(message: "Adding place data...");
-      progressDialog.show();
+      // progressDialog.show();
     }
   }
 

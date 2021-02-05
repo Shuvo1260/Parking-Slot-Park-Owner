@@ -10,13 +10,37 @@ class PlaceData {
   var phoneNumber;
   var totalSlot;
   var parkedSlot;
+  var owner;
   PlaceData({
-    this.id,
+    @required this.id,
     @required this.address,
     @required this.imageUrl,
     @required this.rate,
     @required this.phoneNumber,
     @required this.totalSlot,
     @required this.parkedSlot,
+    @required this.owner,
   });
+
+  Map<String, dynamic> toJSON() => {
+        'id': id,
+        'address': address,
+        'imageUrl': imageUrl,
+        'rate': rate,
+        'phoneNumber': phoneNumber,
+        'totalSlot': totalSlot,
+        'parkedSlot': parkedSlot,
+        'owner': owner
+      };
+
+  void fromJSON(Map data) {
+    id = data['id'];
+    address = data['address'];
+    imageUrl = data['imageUrl'];
+    rate = data['rate'];
+    phoneNumber = data['phoneNumber'];
+    totalSlot = data['totalSlot'];
+    parkedSlot = data['parkedSlot'];
+    owner = data['owner'];
+  }
 }
