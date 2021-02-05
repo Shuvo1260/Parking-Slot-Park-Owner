@@ -51,20 +51,25 @@ class _AddPlaceState extends State<AddPlace> {
         type: ProgressDialogType.Normal,
         isDismissible: false,
       );
-      progressDialog.style(message: "Adding place data...");
-      progressDialog.show();
-      var placeData = PlaceData(
-        id: DateTime.now().microsecond,
-        address: _address,
-        imageUrl: _imageUrl,
-        rate: _rate,
-        phoneNumber: _userData.phoneNumber,
-        totalSlot: _totalSlot,
-        parkedSlot: 0,
-        owner: _userData.email.toString().trim(),
-      );
-      if (await PlaceDataManager.saveData(placeData)) {
-        //
+      progressDialog.style(message: "Uploading place data...");
+      // progressDialog.show();
+      print("ImageURL-1: $_imageUrl");
+      _imageUrl = await PlaceDataManager.uploadFile(_imageUrl);
+      print("ImageURL-2: $_imageUrl");
+      if (_imageUrl != null) {
+        var placeData = PlaceData(
+          id: DateTime.now().microsecond,
+          address: _address,
+          imageUrl: _imageUrl,
+          rate: _rate,
+          phoneNumber: _userData.phoneNumber,
+          totalSlot: _totalSlot,
+          parkedSlot: 0,
+          owner: _userData.email.toString().trim(),
+        );
+        if (await PlaceDataManager.saveData(placeData)) {
+          AppManager.showToast(message: "Place Data uploaded successfully");
+        }
       }
     }
   }
@@ -82,7 +87,7 @@ class _AddPlaceState extends State<AddPlace> {
       _showToast("Rate can't be empty");
       return false;
     }
-    if (_totalSlot == null) {
+    if (_totalSlot == 0) {
       _showToast("Total slot can't be empty");
       return false;
     }
@@ -207,7 +212,9 @@ class _AddPlaceState extends State<AddPlace> {
                   ),
 
                   SubmitButton(
-                    onPressed: saveData,
+                    onPressed: () {
+                      saveData();
+                    },
                     text: BUTTON_ADD_PLACE,
                   ),
                 ],
