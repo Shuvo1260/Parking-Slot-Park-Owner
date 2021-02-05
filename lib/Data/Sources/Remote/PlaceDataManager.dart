@@ -22,7 +22,9 @@ class PlaceDataManager {
   static Future<String> uploadFile(String imageUrl, id) async {
     try {
       File file = File(imageUrl);
-      var result = await FirebaseStorage.instance.ref(id).putFile(file);
+      var result = await FirebaseStorage.instance
+          .ref(PATH_PLACE_IMAGE + id)
+          .putFile(file);
       return await result.ref.getDownloadURL();
     } catch (error) {
       print("FileUploadingError: $error");

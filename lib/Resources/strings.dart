@@ -53,6 +53,7 @@ const SIGN_OUT = "Sign out";
 // Database paths
 const PATH_USER_DATA = "Users";
 const PATH_PLACE_DATA = "Places";
+const PATH_PLACE_IMAGE = "Places/";
 
 // Temporary data
 const TEMP_PRO_PIC_URL =
