@@ -17,7 +17,7 @@ class AppManager {
   }
 
   static String emailToID(email) {
-    return email.replaceAll(".", "").split("@").first;
+    return email.replaceAll(".", "").trim();
   }
 
   static bool isEmailValid(email) {

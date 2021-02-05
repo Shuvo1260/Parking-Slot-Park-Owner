@@ -5,12 +5,10 @@ import 'package:parking_slot_seller/Resources/strings.dart';
 class UserDataManager {
   static FirebaseFirestore _firestore;
 
-  UserDataManager() {
-    _firestore = FirebaseFirestore.instance;
-  }
-
   static Future<bool> saveUserData(UserData userData) async {
     try {
+      _firestore = FirebaseFirestore.instance;
+      print("UserDataSaving: $PATH_USER_DATA");
       await _firestore
           .collection(PATH_USER_DATA)
           .doc(userData.id)
