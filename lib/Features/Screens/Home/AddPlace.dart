@@ -70,7 +70,14 @@ class _AddPlaceState extends State<AddPlace> {
         );
         if (await PlaceDataManager.saveData(placeData)) {
           AppManager.showToast(message: "Place Data uploaded successfully");
+          progressDialog.hide();
+        } else {
+          progressDialog.hide();
+          _showToast("Uploading Failed!");
         }
+      } else {
+        progressDialog.hide();
+        _showToast("Uploading Failed!");
       }
     }
   }

@@ -10,7 +10,7 @@ class PlaceDataManager {
     try {
       await FirebaseFirestore.instance
           .collection(PATH_PLACE_DATA)
-          .doc()
+          .doc(placeData.id)
           .set(placeData.toJSON());
       return true;
     } catch (error) {
