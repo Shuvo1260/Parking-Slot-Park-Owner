@@ -52,7 +52,7 @@ class _AddPlaceState extends State<AddPlace> {
         isDismissible: false,
       );
       progressDialog.style(message: "Uploading place data...");
-      // progressDialog.show();
+      progressDialog.show();
       var id = DateTime.now().microsecond;
       print("ImageURL-1: $_imageUrl");
       _imageUrl = await PlaceDataManager.uploadFile(_imageUrl, id);
