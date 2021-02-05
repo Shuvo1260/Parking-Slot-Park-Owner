@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:parking_slot_seller/Data/Models/UserData.dart';
+import 'package:parking_slot_seller/Data/Sources/Remote/UserDataManager.dart';
 import 'package:parking_slot_seller/Resources/strings.dart';
 
 class AuthManager {
@@ -23,25 +24,12 @@ class AuthManager {
           email: userData.email.trim(), password: userData.password);
       if (value.user != null) {
         await value.user.sendEmailVerification();
-        return await _saveUserData(userData);
+        return await UserDataManager.saveUserData(userData);
       }
     } catch (error) {
       print("SignUpError: $error");
     }
     return false;
-  }
-
-  Future<bool> _saveUserData(UserData userData) async {
-    try {
-      await _firestore
-          .collection(PATH_USER_DATA)
-          .doc(userData.id)
-          .set(userData.toJSON());
-      return true;
-    } catch (error) {
-      print("UserDataSavingError: $error");
-      return false;
-    }
   }
 
   Future<String> signIn(email, password) async {
