@@ -53,12 +53,13 @@ class _AddPlaceState extends State<AddPlace> {
       );
       progressDialog.style(message: "Uploading place data...");
       // progressDialog.show();
+      var id = DateTime.now().microsecond;
       print("ImageURL-1: $_imageUrl");
-      _imageUrl = await PlaceDataManager.uploadFile(_imageUrl);
+      _imageUrl = await PlaceDataManager.uploadFile(_imageUrl, id);
       print("ImageURL-2: $_imageUrl");
       if (_imageUrl != null) {
         var placeData = PlaceData(
-          id: DateTime.now().microsecond,
+          id: id,
           address: _address,
           imageUrl: _imageUrl,
           rate: _rate,
