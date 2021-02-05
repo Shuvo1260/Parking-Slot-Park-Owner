@@ -1,7 +1,9 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:parking_slot_seller/Controllers/UserController.dart';
 import 'package:parking_slot_seller/Data/Models/PlacesData.dart';
 import 'package:parking_slot_seller/Data/Models/UserData.dart';
 import 'package:parking_slot_seller/Data/Sources/Remote/PlaceDataManager.dart';
@@ -20,6 +22,7 @@ class AddPlace extends StatefulWidget {
 }
 
 class _AddPlaceState extends State<AddPlace> {
+  final _userController = Get.put(UserController());
   var _imageUrl;
   var _address;
   var _rate;
@@ -51,14 +54,15 @@ class _AddPlaceState extends State<AddPlace> {
       progressDialog.style(message: "Adding place data...");
       progressDialog.show();
       var placeData = PlaceData(
-          id: DateTime.now().microsecond,
-          address: _address,
-          imageUrl: _imageUrl,
-          rate: _rate,
-          phoneNumber: _userData.phoneNumber,
-          totalSlot: _totalSlot,
-          parkedSlot: 0,
-          owner: _userData.email.toString().trim());
+        id: DateTime.now().microsecond,
+        address: _address,
+        imageUrl: _imageUrl,
+        rate: _rate,
+        phoneNumber: _userData.phoneNumber,
+        totalSlot: _totalSlot,
+        parkedSlot: 0,
+        owner: _userData.email.toString().trim(),
+      );
       if (await PlaceDataManager.saveData(placeData)) {
         //
       }
@@ -96,6 +100,7 @@ class _AddPlaceState extends State<AddPlace> {
   @override
   void initState() {
     super.initState();
+    _userData = _userController.userData.value;
   }
 
   @override
