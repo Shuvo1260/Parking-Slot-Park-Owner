@@ -29,4 +29,14 @@ class UserData {
         'password': password,
         'imageUrl': imageUrl
       };
+
+  void fromJSON(Map data) {
+    id = data['id'];
+    name = data['name'];
+    phoneNumber = data['phoneNumber'];
+    address = data['address'];
+    email = data['email'];
+    password = data['password'];
+    imageUrl = data['imageUrl'];
+  }
 }
