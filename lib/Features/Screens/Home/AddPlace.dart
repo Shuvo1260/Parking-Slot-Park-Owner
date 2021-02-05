@@ -25,8 +25,8 @@ class _AddPlaceState extends State<AddPlace> {
   final _userController = Get.put(UserController());
   var _imageUrl;
   var _address;
-  var _rate;
-  int _totalSlot;
+  double _rate = 0.0;
+  int _totalSlot = 0;
 
   UserData _userData;
 
@@ -92,7 +92,7 @@ class _AddPlaceState extends State<AddPlace> {
       _showToast("Address can't be empty");
       return false;
     }
-    if (_rate == null) {
+    if (_rate == 0.0) {
       _showToast("Rate can't be empty");
       return false;
     }
@@ -188,7 +188,7 @@ class _AddPlaceState extends State<AddPlace> {
                     (value) {
                       print(value);
                       setState(() {
-                        _rate = value;
+                        _rate = double.parse(value);
                       });
                     },
                     obscure: false,
@@ -206,7 +206,7 @@ class _AddPlaceState extends State<AddPlace> {
                     (value) {
                       print(value);
                       setState(() {
-                        _totalSlot = value;
+                        _totalSlot = int.parse(value);
                       });
                     },
                     obscure: false,
