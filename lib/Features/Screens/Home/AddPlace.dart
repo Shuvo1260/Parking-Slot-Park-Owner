@@ -8,6 +8,8 @@ import 'package:parking_slot_seller/Resources/assets.dart';
 import 'package:parking_slot_seller/Resources/colors.dart';
 import 'package:parking_slot_seller/Resources/strings.dart';
 import 'package:parking_slot_seller/Resources/values.dart';
+import 'package:parking_slot_seller/Utils/AppManager.dart';
+import 'package:progress_dialog/progress_dialog.dart';
 
 class AddPlace extends StatefulWidget {
   @override
@@ -16,6 +18,9 @@ class AddPlace extends StatefulWidget {
 
 class _AddPlaceState extends State<AddPlace> {
   var _imageUrl;
+  var _address;
+  var _rate;
+  var _totalSlot;
 
   final picker = ImagePicker();
 
@@ -32,7 +37,43 @@ class _AddPlaceState extends State<AddPlace> {
   }
 
   void saveData() async {
-    //
+    if (_validityChecker()) {
+      var progressDialog = ProgressDialog(
+        context,
+        type: ProgressDialogType.Normal,
+        isDismissible: false,
+      );
+      progressDialog.style(message: "Adding place data...");
+      progressDialog.show();
+    }
+  }
+
+  bool _validityChecker() {
+    if (_imageUrl == null) {
+      _showToast("Image must be select");
+      return false;
+    }
+    if (_address == null) {
+      _showToast("Address can't be empty");
+      return false;
+    }
+    if (_rate == null) {
+      _showToast("Rate can't be empty");
+      return false;
+    }
+    if (_totalSlot == null) {
+      _showToast("Total slot can't be empty");
+      return false;
+    }
+
+    return true;
+  }
+
+  void _showToast(message) {
+    AppManager.showToast(
+      message: message,
+      backgroundColor: Colors.red,
+    );
   }
 
   @override
@@ -88,6 +129,9 @@ class _AddPlaceState extends State<AddPlace> {
                   AddPlaceTextField(
                     (value) {
                       print(value);
+                      setState(() {
+                        _address = value;
+                      });
                     },
                     obscure: false,
                     hint: HINT_ADDRESS,
@@ -102,6 +146,9 @@ class _AddPlaceState extends State<AddPlace> {
                   AddPlaceTextField(
                     (value) {
                       print(value);
+                      setState(() {
+                        _rate = value;
+                      });
                     },
                     obscure: false,
                     hint: HINT_RATE,
@@ -117,6 +164,9 @@ class _AddPlaceState extends State<AddPlace> {
                   AddPlaceTextField(
                     (value) {
                       print(value);
+                      setState(() {
+                        _totalSlot = value;
+                      });
                     },
                     obscure: false,
                     hint: TITLE_TOTAL_SLOT,
