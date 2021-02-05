@@ -2,6 +2,9 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:parking_slot_seller/Data/Models/PlacesData.dart';
+import 'package:parking_slot_seller/Data/Models/UserData.dart';
+import 'package:parking_slot_seller/Data/Sources/Remote/PlaceDataManager.dart';
 import 'package:parking_slot_seller/Features/Widgets/AddPlaceWidgets.dart';
 import 'package:parking_slot_seller/Features/Widgets/widgets_login_registration.dart';
 import 'package:parking_slot_seller/Resources/assets.dart';
@@ -20,7 +23,9 @@ class _AddPlaceState extends State<AddPlace> {
   var _imageUrl;
   var _address;
   var _rate;
-  var _totalSlot;
+  int _totalSlot;
+
+  UserData _userData;
 
   final picker = ImagePicker();
 
@@ -44,7 +49,19 @@ class _AddPlaceState extends State<AddPlace> {
         isDismissible: false,
       );
       progressDialog.style(message: "Adding place data...");
-      // progressDialog.show();
+      progressDialog.show();
+      var placeData = PlaceData(
+          id: DateTime.now().microsecond,
+          address: _address,
+          imageUrl: _imageUrl,
+          rate: _rate,
+          phoneNumber: _userData.phoneNumber,
+          totalSlot: _totalSlot,
+          parkedSlot: 0,
+          owner: _userData.email.toString().trim());
+      if (await PlaceDataManager.saveData(placeData)) {
+        //
+      }
     }
   }
 
@@ -74,6 +91,11 @@ class _AddPlaceState extends State<AddPlace> {
       message: message,
       backgroundColor: Colors.red,
     );
+  }
+
+  @override
+  void initState() {
+    super.initState();
   }
 
   @override
