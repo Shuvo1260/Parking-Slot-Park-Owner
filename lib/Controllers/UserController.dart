@@ -7,16 +7,17 @@ import 'package:parking_slot_seller/Utils/AppManager.dart';
 class UserController extends GetxController {
   var userData = UserData().obs;
   FirebaseAuth _firebaseAuth;
-  String id;
+  String _id;
   @override
   void onInit() {
     super.onInit();
     _firebaseAuth = FirebaseAuth.instance;
-    id = AppManager.emailToID(_firebaseAuth.currentUser.email);
+    _id = AppManager.emailToID(_firebaseAuth.currentUser.email);
     fetchUserData();
   }
 
   void fetchUserData() async {
-    userData.value = await UserDataManager.getUserData(id);
+    print("id: $_id");
+    userData.value = await UserDataManager.getUserData(_id);
   }
 }
