@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:parking_slot_seller/Controllers/PlaceController.dart';
-import 'package:parking_slot_seller/Data/Models/PlacesData.dart';
 import 'package:parking_slot_seller/Features/Screens/Home/AddPlace.dart';
 import 'package:parking_slot_seller/Features/Screens/Home/ViewPlace.dart';
 import 'package:parking_slot_seller/Features/Widgets/HomeWidgets.dart';
@@ -13,45 +12,41 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<PlaceData> placeList = [
-    PlaceData(
-      id: 2,
-      address:
-          "Testfdsajsalfdkjfalskjdlfaskjlkdfsajlkasfdjlkjfadslkjfdaslkjfdsalkjfdsalkjfdsakljlskdfajas1",
-      imageUrl:
-          "https://i.pinimg.com/originals/66/d0/86/66d0863ef27e8dc8ab401072a526693f.jpg",
-      rate: 16,
-      phoneNumber: "01627415001",
-      totalSlot: 10,
-      parkedSlot: 3,
-    ),
-    PlaceData(
-      id: 2,
-      address: "Test2",
-      imageUrl:
-          "https://i.pinimg.com/originals/66/d0/86/66d0863ef27e8dc8ab401072a526693f.jpg",
-      rate: 25,
-      phoneNumber: "01627415002",
-      totalSlot: 10,
-      parkedSlot: 3,
-    ),
-    PlaceData(
-      id: 2,
-      address: "Test3",
-      imageUrl:
-          "https://i.pinimg.com/originals/66/d0/86/66d0863ef27e8dc8ab401072a526693f.jpg",
-      rate: 5,
-      phoneNumber: "01627415003",
-      totalSlot: 10,
-      parkedSlot: 3,
-    ),
-  ];
+  // List<PlaceData> placeList = [
+  //   PlaceData(
+  //     id: 2,
+  //     address:
+  //         "Testfdsajsalfdkjfalskjdlfaskjlkdfsajlkasfdjlkjfadslkjfdaslkjfdsalkjfdsalkjfdsakljlskdfajas1",
+  //     imageUrl:
+  //         "https://i.pinimg.com/originals/66/d0/86/66d0863ef27e8dc8ab401072a526693f.jpg",
+  //     rate: 16,
+  //     phoneNumber: "01627415001",
+  //     totalSlot: 10,
+  //     parkedSlot: 3,
+  //   ),
+  //   PlaceData(
+  //     id: 2,
+  //     address: "Test2",
+  //     imageUrl:
+  //         "https://i.pinimg.com/originals/66/d0/86/66d0863ef27e8dc8ab401072a526693f.jpg",
+  //     rate: 25,
+  //     phoneNumber: "01627415002",
+  //     totalSlot: 10,
+  //     parkedSlot: 3,
+  //   ),
+  //   PlaceData(
+  //     id: 2,
+  //     address: "Test3",
+  //     imageUrl:
+  //         "https://i.pinimg.com/originals/66/d0/86/66d0863ef27e8dc8ab401072a526693f.jpg",
+  //     rate: 5,
+  //     phoneNumber: "01627415003",
+  //     totalSlot: 10,
+  //     parkedSlot: 3,
+  //   ),
+  // ];
 
-  @override
-  void setState(fn) {
-    super.setState(fn);
-    //
-  }
+  var placeListController = Get.put(PlaceController());
 
   @override
   Widget build(BuildContext context) {

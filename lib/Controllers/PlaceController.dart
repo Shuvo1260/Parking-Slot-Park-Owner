@@ -10,9 +10,10 @@ class PlaceController extends GetxController {
   void onInit() {
     super.onInit();
     _firebaseAuth = FirebaseAuth.instance;
+    _fetchPlaceList();
   }
 
-  void fetchPlaceList() async {
+  void _fetchPlaceList() async {
     placeList.assignAll(
         await PlaceDataManager.getDataList(_firebaseAuth.currentUser.email));
   }
