@@ -35,4 +35,7 @@ class PlaceDataManager {
   static Future<PlaceData> getData() async {
     //
   }
+  static Future<List<PlaceData>> getDataList(owner) async {
+    //
+  }
 }

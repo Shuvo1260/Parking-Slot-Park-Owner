@@ -64,14 +64,15 @@ class _HomePageState extends State<HomePage> {
                 itemBuilder: (context, index) {
                   return FlatButton(
                     padding: EdgeInsets.all(0.0),
-                    child: ViewPlaceListItem(placeList[index]),
+                    child: ViewPlaceListItem(controller.placeList[index]),
                     onPressed: () {
                       print(index);
-                      Get.to(ViewPlace(), arguments: placeList[index]);
+                      Get.to(ViewPlace(),
+                          arguments: controller.placeList[index]);
                     },
                   );
                 },
-                itemCount: placeList.length,
+                itemCount: controller.placeList.length,
               );
             },
           ),
