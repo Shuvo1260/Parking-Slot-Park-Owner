@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:parking_slot_seller/Controllers/PlaceController.dart';
 import 'package:parking_slot_seller/Data/Models/PlacesData.dart';
 import 'package:parking_slot_seller/Features/Screens/Home/AddPlace.dart';
 import 'package:parking_slot_seller/Features/Screens/Home/ViewPlace.dart';
@@ -57,18 +58,22 @@ class _HomePageState extends State<HomePage> {
     return Container(
       child: Center(
         child: Scaffold(
-          body: ListView.builder(
-            itemBuilder: (context, index) {
-              return FlatButton(
-                padding: EdgeInsets.all(0.0),
-                child: ViewPlaceListItem(placeList[index]),
-                onPressed: () {
-                  print(index);
-                  Get.to(ViewPlace(), arguments: placeList[index]);
+          body: GetX<PlaceController>(
+            builder: (controller) {
+              return ListView.builder(
+                itemBuilder: (context, index) {
+                  return FlatButton(
+                    padding: EdgeInsets.all(0.0),
+                    child: ViewPlaceListItem(placeList[index]),
+                    onPressed: () {
+                      print(index);
+                      Get.to(ViewPlace(), arguments: placeList[index]);
+                    },
+                  );
                 },
+                itemCount: placeList.length,
               );
             },
-            itemCount: placeList.length,
           ),
           floatingActionButton: FloatingActionButton(
             onPressed: () {
