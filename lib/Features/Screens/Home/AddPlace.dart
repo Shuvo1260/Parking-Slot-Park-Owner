@@ -51,7 +51,7 @@ class _AddPlaceState extends State<AddPlace> {
         type: ProgressDialogType.Normal,
         isDismissible: false,
       );
-      progressDialog.style(message: "Uploading place data...");
+      progressDialog.style(message: "Uploading data...");
       progressDialog.show();
       var id = DateTime.now().microsecondsSinceEpoch;
       print("ImageURL-1: $_imageUrl");

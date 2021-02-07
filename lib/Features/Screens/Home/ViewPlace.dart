@@ -8,6 +8,7 @@ import 'package:parking_slot_seller/Resources/colors.dart';
 import 'package:parking_slot_seller/Resources/strings.dart';
 import 'package:parking_slot_seller/Resources/values.dart';
 import 'package:parking_slot_seller/Utils/AppManager.dart';
+import 'package:progress_dialog/progress_dialog.dart';
 
 class ViewPlace extends StatefulWidget {
   @override
@@ -51,12 +52,21 @@ class _ViewPlaceState extends State<ViewPlace> {
   }
 
   void deleteData() async {
+    var progressDialog = ProgressDialog(
+      context,
+      type: ProgressDialogType.Normal,
+      isDismissible: false,
+    );
+    progressDialog.style(message: "Deleting data...");
+    progressDialog.show();
     if (await PlaceDataManager.deleteData(_placeData.id)) {
       AppManager.showToast(message: "Successfully deleted");
+      progressDialog.hide();
       Get.back();
     } else {
       AppManager.showToast(
           message: "Operation failed", backgroundColor: Colors.red);
+      progressDialog.hide();
     }
   }
 
