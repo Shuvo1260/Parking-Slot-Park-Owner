@@ -23,6 +23,33 @@ class _ViewPlaceState extends State<ViewPlace> {
     print(_placeData.address);
   }
 
+  Future<void> showDeleteDialog() async {
+    return showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) {
+        return AlertDialog(
+          title: Text("Do you want to delete?"),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context, rootNavigator: true).pop();
+                deleteData();
+              },
+              child: Text("Yes"),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context, rootNavigator: true).pop();
+              },
+              child: Text("No"),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   void deleteData() async {
     if (await PlaceDataManager.deleteData(_placeData.id)) {
       AppManager.showToast(message: "Successfully deleted");
@@ -53,7 +80,7 @@ class _ViewPlaceState extends State<ViewPlace> {
           IconButton(
             icon: Icon(Icons.delete),
             onPressed: () {
-              deleteData();
+              showDeleteDialog();
             },
           ),
         ],
