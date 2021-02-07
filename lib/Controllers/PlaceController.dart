@@ -1,7 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:parking_slot_seller/Data/Models/PlacesData.dart';
-import 'package:parking_slot_seller/Data/Sources/Remote/PlaceDataManager.dart';
+import 'package:parking_slot_seller/Resources/strings.dart';
 
 class PlaceController extends GetxController {
   var placeList = List<PlaceData>().obs;
@@ -14,7 +15,20 @@ class PlaceController extends GetxController {
   }
 
   void _fetchPlaceList() async {
-    placeList.assignAll(
-        await PlaceDataManager.getDataList(_firebaseAuth.currentUser.email));
+    var owner = _firebaseAuth.currentUser.email;
+
+    FirebaseFirestore.instance
+        .collection(PATH_PLACE_DATA)
+        .where('owner', isEqualTo: owner)
+        .snapshots(includeMetadataChanges: true)
+        .listen((querySnapshot) {
+      placeList.clear();
+      querySnapshot.docs.forEach((element) {
+        print(element.data());
+        PlaceData placeData = PlaceData();
+        placeData.fromJSON(element.data());
+        placeList.add(placeData);
+      });
+    });
   }
 }

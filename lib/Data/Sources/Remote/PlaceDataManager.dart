@@ -35,23 +35,4 @@ class PlaceDataManager {
   static Future<PlaceData> getData() async {
     //
   }
-  static Future<List<PlaceData>> getDataList(owner) async {
-    List<PlaceData> placeList = List<PlaceData>();
-    try {
-      print("Owner: $owner");
-      var snapshot = await FirebaseFirestore.instance
-          .collection(PATH_PLACE_DATA)
-          .where('owner', isEqualTo: owner)
-          .get();
-      snapshot.docs.forEach((element) {
-        print(element.data());
-        PlaceData placeData = PlaceData();
-        placeData.fromJSON(element.data());
-        placeList.add(placeData);
-      });
-    } catch (error) {
-      print("PlaceListGettingError: $error");
-    }
-    return placeList;
-  }
 }
