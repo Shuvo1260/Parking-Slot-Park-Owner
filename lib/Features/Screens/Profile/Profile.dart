@@ -17,8 +17,12 @@ class _ProfileState extends State<Profile> {
   void initState() {
     super.initState();
 
-    _userData = _userController.userData.value;
+    _fetchUserData();
     print("UserData: $_userData");
+  }
+
+  void _fetchUserData() async {
+    _userData = _userController.userData.value;
   }
 
   @override
