@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:parking_slot_seller/Data/Models/PlacesData.dart';
+import 'package:parking_slot_seller/Data/Sources/Remote/PlaceDataManager.dart';
 import 'package:parking_slot_seller/Features/Widgets/ViewPlaceWidgets.dart';
 import 'package:parking_slot_seller/Resources/assets.dart';
 import 'package:parking_slot_seller/Resources/colors.dart';
 import 'package:parking_slot_seller/Resources/strings.dart';
 import 'package:parking_slot_seller/Resources/values.dart';
+import 'package:parking_slot_seller/Utils/AppManager.dart';
 
 class ViewPlace extends StatefulWidget {
   @override
@@ -19,6 +21,16 @@ class _ViewPlaceState extends State<ViewPlace> {
     super.initState();
     this._placeData = Get.arguments;
     print(_placeData.address);
+  }
+
+  void deleteData() async {
+    if (await PlaceDataManager.deleteData(_placeData.id)) {
+      AppManager.showToast(message: "Successfully deleted");
+      Get.back();
+    } else {
+      AppManager.showToast(
+          message: "Operation failed", backgroundColor: Colors.red);
+    }
   }
 
   @override
@@ -40,7 +52,9 @@ class _ViewPlaceState extends State<ViewPlace> {
           ),
           IconButton(
             icon: Icon(Icons.delete),
-            onPressed: () {},
+            onPressed: () {
+              deleteData();
+            },
           ),
         ],
       ),

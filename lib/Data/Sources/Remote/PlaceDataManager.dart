@@ -35,4 +35,17 @@ class PlaceDataManager {
   static Future<PlaceData> getData() async {
     //
   }
+
+  static Future<bool> deleteData(id) async {
+    try {
+      await FirebaseFirestore.instance
+          .collection(PATH_PLACE_DATA)
+          .doc(id)
+          .delete();
+      return true;
+    } catch (error) {
+      print("DeletingPlaceDataError: $error");
+      return false;
+    }
+  }
 }
