@@ -59,7 +59,7 @@ class _ViewPlaceState extends State<ViewPlace> {
     );
     progressDialog.style(message: "Deleting data...");
     progressDialog.show();
-    if (await PlaceDataManager.deleteData(_placeData.id)) {
+    if (await PlaceDataManager.deleteData(_placeData.imageUrl, _placeData.id)) {
       AppManager.showToast(message: "Successfully deleted");
       progressDialog.hide();
       Get.back();
@@ -83,10 +83,6 @@ class _ViewPlaceState extends State<ViewPlace> {
         ),
         backgroundColor: COLOR_CARIBBEAN_GREEN,
         actions: [
-          IconButton(
-            icon: Icon(Icons.edit),
-            onPressed: () {},
-          ),
           IconButton(
             icon: Icon(Icons.delete),
             onPressed: () {

@@ -36,8 +36,10 @@ class PlaceDataManager {
     //
   }
 
-  static Future<bool> deleteData(id) async {
+  static Future<bool> deleteData(imageUrl, id) async {
     try {
+      await FirebaseStorage.instance.refFromURL(imageUrl).delete();
+
       await FirebaseFirestore.instance
           .collection(PATH_PLACE_DATA)
           .doc(id)
