@@ -4,6 +4,8 @@ import 'package:get/get_state_manager/src/rx_flutter/rx_getx_widget.dart';
 import 'package:parking_slot_seller/Controllers/HistoryListController.dart';
 import 'package:parking_slot_seller/Features/Widgets/ParkingWidgets.dart';
 
+import '../ViewBooking.dart';
+
 class HistoryPage extends StatelessWidget {
   final historyController = Get.put(HistoryListController());
   @override
@@ -19,8 +21,8 @@ class HistoryPage extends StatelessWidget {
                   child: ParkingPlaceListItem(controller.parkingList[index]),
                   onPressed: () {
                     print(index);
-                    // Get.to(ViewPlace(),
-                    //     arguments: controller.parkingList[index]);
+                    Get.to(ViewBooking(),
+                        arguments: controller.parkingList[index]);
                   },
                 );
               },

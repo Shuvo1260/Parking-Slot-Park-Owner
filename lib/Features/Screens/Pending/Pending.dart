@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_getx_widget.dart';
 import 'package:parking_slot_seller/Controllers/PendingListController.dart';
+import 'package:parking_slot_seller/Features/Screens/ViewBooking.dart';
 import 'package:parking_slot_seller/Features/Widgets/ParkingWidgets.dart';
 
 class PendingPage extends StatelessWidget {
@@ -19,8 +20,8 @@ class PendingPage extends StatelessWidget {
                   child: ParkingPlaceListItem(controller.parkingList[index]),
                   onPressed: () {
                     print(index);
-                    // Get.to(ViewPlace(),
-                    //     arguments: controller.parkingList[index]);
+                    Get.to(ViewBooking(),
+                        arguments: controller.parkingList[index]);
                   },
                 );
               },
