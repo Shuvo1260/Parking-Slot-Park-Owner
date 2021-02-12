@@ -57,7 +57,6 @@ class _AddPlaceState extends State<AddPlace> {
       print("ImageURL-1: $_imageUrl");
       _imageUrl = await PlaceDataManager.uploadFile(_imageUrl, id.toString());
       _userData = _userController.userData.value;
-      print("ImageURL-2: ${_userData.toJSON()}");
       if (_imageUrl != null) {
         var placeData = PlaceData(
           id: id.toString(),

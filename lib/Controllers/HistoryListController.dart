@@ -20,7 +20,6 @@ class HistoryListController extends GetxController {
         .collection(PATH_PARKING_DATA)
         .where('parkOwner', isEqualTo: _firebaseAuth.currentUser.email.trim())
         .where('status', isEqualTo: 3)
-        .orderBy('id', descending: true)
         .snapshots(includeMetadataChanges: true)
         .listen((event) {
       event.docs.forEach((element) {
