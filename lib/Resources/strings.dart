@@ -41,6 +41,14 @@ const APPBAR_TITLES = [
 const APPBAR_PLACE = "Place";
 const APPBAR_ADD_PLACE = "Place details";
 
+// Status
+const PARKING_STATUS = [
+  "Pending",
+  "Parking allowed",
+  "Parked",
+  "Picked",
+  "Cancelled"
+];
 // Titles
 const TITLE_SLOT_DETAILS = "Slot details";
 const TITLE_TOTAL_SLOT = "Total slots";
