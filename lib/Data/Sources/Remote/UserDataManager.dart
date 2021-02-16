@@ -25,7 +25,7 @@ class UserDataManager {
       _firestore = FirebaseFirestore.instance;
       print("UserId: $id");
       var value = await _firestore.collection(PATH_USER_DATA).doc(id).get();
-      print("User: ${value.data()}");
+      print(value.data());
       var userData = UserData();
       userData.fromJSON(value.data());
       print("UserData: ${userData.toJSON()}");

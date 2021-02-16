@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:parking_slot_seller/Data/Models/ParkingData.dart';
+import 'package:parking_slot_seller/Data/Sources/Remote/BookingManager.dart';
 import 'package:parking_slot_seller/Resources/assets.dart';
 import 'package:parking_slot_seller/Resources/colors.dart';
 import 'package:parking_slot_seller/Resources/strings.dart';
@@ -72,7 +73,7 @@ class _ViewBookingState extends State<ViewBooking> {
                         height: 10.0,
                       ),
                       Text(
-                        "Park ower phone: +88${_parkingData.parkOwnerNumber}",
+                        "Park owner phone: +88${_parkingData.parkOwnerNumber}",
                         style: TextStyle(
                           fontSize: 16.0,
                         ),
@@ -95,10 +96,28 @@ class _ViewBookingState extends State<ViewBooking> {
                           fontSize: 16.0,
                         ),
                       ),
+                      SizedBox(
+                        height: 10.0,
+                      ),
+                      Text(
+                        "Started time: ${_parkingData.startTime}",
+                        style: TextStyle(
+                          fontSize: 16.0,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10.0,
+                      ),
+                      Text(
+                        "End time: ${_parkingData.endTime}",
+                        style: TextStyle(
+                          fontSize: 16.0,
+                        ),
+                      ),
                     ],
                   ),
                 ),
-                _Option(parkingData: _parkingData),
+                Option(_parkingData),
               ],
             ),
           ),
@@ -108,15 +127,16 @@ class _ViewBookingState extends State<ViewBooking> {
   }
 }
 
-class _Option extends StatelessWidget {
-  const _Option({
-    Key key,
-    @required ParkingData parkingData,
-  })  : _parkingData = parkingData,
-        super(key: key);
+class Option extends StatefulWidget {
+  ParkingData _parkingData;
+  Option(this._parkingData);
+  @override
+  _OptionState createState() => _OptionState(_parkingData);
+}
 
-  final ParkingData _parkingData;
-
+class _OptionState extends State<Option> {
+  _OptionState(this._parkingData);
+  ParkingData _parkingData;
   @override
   Widget build(BuildContext context) {
     if (_parkingData.status == 0) {
@@ -127,7 +147,17 @@ class _Option extends StatelessWidget {
             text: "Cancel",
             colorFirst: Colors.red,
             colorSecond: Colors.redAccent,
-            onPressed: () {},
+            onPressed: () async {
+              setState(() {
+                _parkingData.status = 4;
+              });
+              if (await BookingManager.updateBooking(
+                  _parkingData.id.toString(), _parkingData.status)) {
+                setState(() {
+                  _parkingData.status = 0;
+                });
+              }
+            },
           ),
           SizedBox(
             width: 10.0,
@@ -136,8 +166,62 @@ class _Option extends StatelessWidget {
             text: "Allow",
             colorFirst: COLOR_CARIBBEAN_GREEN,
             colorSecond: COLOR_SHAMROCK,
-            onPressed: () {},
+            onPressed: () async {
+              setState(() {
+                _parkingData.status++;
+              });
+              if (!await BookingManager.updateBooking(
+                  _parkingData.id.toString(), _parkingData.status)) {
+                setState(() {
+                  _parkingData.status--;
+                });
+              }
+            },
           ),
+        ],
+      );
+    } else if (_parkingData.status == 1) {
+      return Center(
+        child: Text(
+          "You have allowed for parking",
+          style: TextStyle(
+              color: COLOR_CARIBBEAN_GREEN,
+              fontSize: 14.0,
+              fontFamily: FONT_BANK_GOTHIC),
+        ),
+      );
+    } else if (_parkingData.status == 2) {
+      return Center(
+        child: Text(
+          "Car is parked",
+          style: TextStyle(
+              color: COLOR_CARIBBEAN_GREEN,
+              fontSize: 14.0,
+              fontFamily: FONT_BANK_GOTHIC),
+        ),
+      );
+    } else if (_parkingData.status == 3) {
+      var endTime = _parkingData.endTimeInMilli;
+      var minute = (endTime - _parkingData.startTimeInMilli) / 60000000;
+      print("ParkingTime: $minute");
+      double rate = (minute / 60) * _parkingData.rate;
+      return Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Padding(
+            padding: EdgeInsets.all(10.0),
+            child: Text(
+              "Car has picked up",
+              textAlign: TextAlign.center,
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.all(10.0),
+            child: Text(
+              "Bill: " + rate.ceil().toString() + SIGN_TAKA,
+              style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+            ),
+          )
         ],
       );
     } else if (_parkingData.status == 4) {

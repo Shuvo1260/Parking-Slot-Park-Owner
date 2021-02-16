@@ -6,28 +6,27 @@ import 'package:parking_slot_seller/Resources/strings.dart';
 
 class HistoryListController extends GetxController {
   FirebaseAuth _firebaseAuth;
-  var parkingList = List<ParkingData>().obs;
+  var parkingList = List<ParkingData>();
 
-  @override
-  void onInit() {
-    super.onInit();
+  HistoryListController() {
     _firebaseAuth = FirebaseAuth.instance;
-    fetchList();
   }
 
-  void fetchList() async {
-    FirebaseFirestore.instance
+  Future<List<ParkingData>> fetchList() async {
+    var values = await FirebaseFirestore.instance
         .collection(PATH_PARKING_DATA)
         .where('parkOwner', isEqualTo: _firebaseAuth.currentUser.email.trim())
         .where('status', isEqualTo: 3)
-        .snapshots(includeMetadataChanges: true)
-        .listen((event) {
-      event.docs.forEach((element) {
-        print("Parking: ${element.data()}");
-        var parking = ParkingData();
-        parking.fromJSON(element.data());
-        parkingList.add(parking);
-      });
+        .get();
+    parkingList.clear();
+
+    values.docs.forEach((element) {
+      var parkingData = ParkingData();
+      parkingData.fromJSON(element.data());
+      print("Parking data: " + parkingData.carLicense);
+      parkingList.add(parkingData);
     });
+
+    return parkingList;
   }
 }
